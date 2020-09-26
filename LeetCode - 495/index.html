@@ -20,25 +20,24 @@
     var CONFIG = {"hostname":"www.larrysprognotes.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="題目： LeetCode - 404. Sum of Left Leaves 題目說明給一個 Tree，找到所有位於左邊的葉子的總和。">
+  <meta name="description" content="題目： LeetCode - 495. Teemo Attacking 題目說明給一個陣列及一個整數，整數代表攻擊後能使敵人中毒的時間，陣列代表攻擊敵人的時間點，若攻擊時敵人處於中毒狀態則中毒狀態更新。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode - 404 解題紀錄 &#x2F; August LeetCoding Challenge Day 24">
-<meta property="og:url" content="http://www.larrysprognotes.com/LeetCode%20-%20404/index.html">
+<meta property="og:title" content="LeetCode - 495 解題紀錄 &#x2F; September LeetCoding Challenge Day 26">
+<meta property="og:url" content="http://www.larrysprognotes.com/LeetCode%20-%20495/index.html">
 <meta property="og:site_name" content="Larry&#39;s notes">
-<meta property="og:description" content="題目： LeetCode - 404. Sum of Left Leaves 題目說明給一個 Tree，找到所有位於左邊的葉子的總和。">
+<meta property="og:description" content="題目： LeetCode - 495. Teemo Attacking 題目說明給一個陣列及一個整數，整數代表攻擊後能使敵人中毒的時間，陣列代表攻擊敵人的時間點，若攻擊時敵人處於中毒狀態則中毒狀態更新。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-08-24T12:04:27.000Z">
-<meta property="article:modified_time" content="2020-09-14T10:32:56.923Z">
+<meta property="article:published_time" content="2020-09-26T13:04:27.000Z">
+<meta property="article:modified_time" content="2020-09-26T13:27:32.316Z">
 <meta property="article:author" content="Larry Lai">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="Tree">
-<meta property="article:tag" content="Recursive">
-<meta property="article:tag" content="LeetCode - Easy">
-<meta property="article:tag" content="LeetCode 30 August">
+<meta property="article:tag" content="Vector">
+<meta property="article:tag" content="LeetCode 30 September">
+<meta property="article:tag" content="LeetCode - Medium">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://www.larrysprognotes.com/LeetCode%20-%20404/">
+<link rel="canonical" href="http://www.larrysprognotes.com/LeetCode%20-%20495/">
 
 
 <script id="page-configurations">
@@ -51,7 +50,7 @@
   };
 </script>
 
-  <title>LeetCode - 404 解題紀錄 / August LeetCoding Challenge Day 24 | Larry's notes</title>
+  <title>LeetCode - 495 解題紀錄 / September LeetCoding Challenge Day 26 | Larry's notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38280830-2"></script>
     <script>
@@ -210,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/LeetCode%20-%20404/">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/LeetCode%20-%20495/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/avatar.jpg">
@@ -223,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode - 404 解題紀錄 / August LeetCoding Challenge Day 24
+          LeetCode - 495 解題紀錄 / September LeetCoding Challenge Day 26
         </h1>
 
         <div class="post-meta">
@@ -233,7 +232,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-08-24 20:04:27" itemprop="dateCreated datePublished" datetime="2020-08-24T20:04:27+08:00">2020-08-24</time>
+              <time title="創建時間：2020-09-26 21:04:27" itemprop="dateCreated datePublished" datetime="2020-09-26T21:04:27+08:00">2020-09-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,14 +255,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>題目： <a href="https://leetcode.com/problems/sum-of-left-leaves/" target="_blank" rel="noopener">LeetCode - 404. Sum of Left Leaves</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給一個 Tree，找到所有位於左邊的葉子的總和。</p>
+        <p>題目： <a href="https://leetcode.com/problems/teemo-attacking/" target="_blank" rel="noopener">LeetCode - 495. Teemo Attacking</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給一個陣列及一個整數，整數代表攻擊後能使敵人中毒的時間，陣列代表攻擊敵人的時間點，若攻擊時敵人處於中毒狀態則中毒狀態更新。</p>
 <a id="more"></a>
 
-<h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>判斷當前 <code>node</code> 的左邊 <code>node</code> 是否符合 <code>!root-&gt;left-&gt;left &amp;&amp; !root-&gt;left-&gt;right</code> 若符合代表 <code>root-&gt;left</code> 為左邊的葉子，依此想法使用遞迴即可。</p>
-<h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumOfLeftLeaves</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; !root-&gt;left-&gt;left &amp;&amp; !root-&gt;left-&gt;right) <span class="keyword">return</span> root-&gt;left-&gt;val + sumOfLeftLeaves(root-&gt;left) + sumOfLeftLeaves(root-&gt;right);</span><br><span class="line">        <span class="keyword">return</span> sumOfLeftLeaves(root-&gt;left) + sumOfLeftLeaves(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>由於中毒時被攻擊會使中毒狀態更新，所以每次中毒的時間可視為兩次攻擊的間隔及 <code>duration</code> 兩者取較小值，最後判斷攻擊次數是否為 0，若為 0 則回傳 0，否則回傳 <code>ret + duration</code>，因為最後一次攻擊時中毒時間必定為 <code>duration</code>，所以結果需要加上 <code>duration</code>。</p>
+<h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fast IO</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">auto</span> __ = []()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">std</span>::ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findPoisonedDuration</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; timeSeries, <span class="keyword">int</span> duration)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ret&#123;&#125;, n = timeSeries.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i&#123;&#125;; i &lt; n - <span class="number">1</span>; ++i) ret += <span class="built_in">min</span>(timeSeries[i + <span class="number">1</span>] - timeSeries[i], duration);</span><br><span class="line">        <span class="keyword">return</span> n ? ret + duration : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/LeetCode/404.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
+<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/LeetCode/495.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
 
     </div>
 
@@ -279,13 +278,13 @@
   </li>
   <li class="post-copyright-link">
     <strong>文章連結：</strong>
-    <a href="http://www.larrysprognotes.com/LeetCode%20-%20404/" title="LeetCode - 404 解題紀錄 &#x2F; August LeetCoding Challenge Day 24">http://www.larrysprognotes.com/LeetCode - 404/</a>
+    <a href="http://www.larrysprognotes.com/LeetCode%20-%20495/" title="LeetCode - 495 解題紀錄 &#x2F; September LeetCoding Challenge Day 26">http://www.larrysprognotes.com/LeetCode - 495/</a>
   </li>
   <li>
-    <strong>發表時間：  </strong>2020-08-24 晚上 08 : 04 : 27
+    <strong>發表時間：  </strong>2020-09-26 晚上 09 : 04 : 27
   </li>
   <li>
-    <strong>更新時間：  </strong>2020-09-14 晚上 06 : 32 : 56
+    <strong>更新時間：  </strong>2020-09-26 晚上 09 : 27 : 32
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -299,10 +298,9 @@
           <div class="post-tags">
               <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
               <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
-              <a href="/tags/Tree/" rel="tag"><i class="fa fa-tag"></i> Tree</a>
-              <a href="/tags/Recursive/" rel="tag"><i class="fa fa-tag"></i> Recursive</a>
-              <a href="/tags/LeetCode-Easy/" rel="tag"><i class="fa fa-tag"></i> LeetCode - Easy</a>
-              <a href="/tags/LeetCode-30-August/" rel="tag"><i class="fa fa-tag"></i> LeetCode 30 August</a>
+              <a href="/tags/Vector/" rel="tag"><i class="fa fa-tag"></i> Vector</a>
+              <a href="/tags/LeetCode-30-September/" rel="tag"><i class="fa fa-tag"></i> LeetCode 30 September</a>
+              <a href="/tags/LeetCode-Medium/" rel="tag"><i class="fa fa-tag"></i> LeetCode - Medium</a>
           </div>
 
         
@@ -311,13 +309,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/LeetCode%20-%201032/" rel="prev" title="LeetCode - 1032 解題紀錄 / August LeetCoding Challenge Day 23">
-      <i class="fa fa-chevron-left"></i> LeetCode - 1032 解題紀錄 / August LeetCoding Challenge Day 23
+    <a href="/LeetCode%20-%20179/" rel="prev" title="LeetCode - 179 解題紀錄 / September LeetCoding Challenge Day 25">
+      <i class="fa fa-chevron-left"></i> LeetCode - 179 解題紀錄 / September LeetCoding Challenge Day 25
     </a></div>
-      <div class="post-nav-item">
-    <a href="/LeetCode%20-%20983/" rel="next" title="LeetCode - 983 解題紀錄 / August LeetCoding Challenge Day 25">
-      LeetCode - 983 解題紀錄 / August LeetCoding Challenge Day 25 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
