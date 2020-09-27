@@ -28,7 +28,7 @@
 <meta property="og:description" content="課程名稱：資料結構 CS203 A授課教師：林基成">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-09-18T14:04:27.000Z">
-<meta property="article:modified_time" content="2020-09-27T14:53:52.359Z">
+<meta property="article:modified_time" content="2020-09-27T16:32:29.053Z">
 <meta property="article:author" content="Larry Lai">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -268,7 +268,7 @@
 <ul>
 <li><strong>函式功能：</strong> 回傳第 <code>n</code> 個 bucket 的元素個數。</li>
 <li><strong>參考作法：</strong> 先找出第 <code>n</code> 個 bucket 的頭部的 iterator，即為 <code>*(myVec.myData.myFirst + n * 2)</code>，因為 <code>myVec</code> 會儲存每個 bucket 的頭部及尾端的 iterator，所以 <code>n</code> 需要乘以 2。接著使用迴圈直到 <code>iter</code> 到了第 <code>n</code> 個 bucket 的尾端，最後判斷 <code>iter</code> 是否等於 <code>myList.end()</code> 若是相等代表這個 bucket 是空的，否則回傳 <code>++tmp</code>，因為迴圈到了尾巴就退出了，會少算一個元素。</li>
-<li><strong>參考解法：</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Returns the number of elements in bucket n.</span></span><br><span class="line"><span class="function">size_type <span class="title">bucket_size</span><span class="params">( size_type n )</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt&#123;&#125;;</span><br><span class="line">    <span class="keyword">auto</span> iter = myVec.myData.myFirst[n * <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">while</span> (iter != myVec.myData.myFirst[n * <span class="number">2</span> + <span class="number">1</span>]) ++cnt, ++iter;</span><br><span class="line">    <span class="keyword">return</span> iter == myList.<span class="built_in">end</span>() ? <span class="number">0</span> : ++cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><strong>參考解法：</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Returns the number of elements in bucket n.</span></span><br><span class="line"><span class="function">size_type <span class="title">bucket_size</span><span class="params">( size_type n )</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> head = &amp;myVec.myData.myFirst[n * <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">return</span> *head == myList.<span class="built_in">end</span>() ? <span class="number">0</span> : <span class="built_in">std</span>::distance(*head, *(head + <span class="number">1</span>)) + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//int cnt&#123;&#125;;</span></span><br><span class="line">    <span class="comment">//auto iter = myVec.myData.myFirst[n * 2];</span></span><br><span class="line">    <span class="comment">//while (iter != myVec.myData.myFirst[n * 2 + 1]) ++cnt, ++iter;</span></span><br><span class="line">    <span class="comment">//return iter == myList.end() ? 0 : ++cnt;</span></span><br><span class="line">    <span class="comment">// also be fine</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -329,7 +329,7 @@
     <strong>發表時間：  </strong>2020-09-18 晚上 10 : 04 : 27
   </li>
   <li>
-    <strong>更新時間：  </strong>2020-09-27 晚上 10 : 53 : 52
+    <strong>更新時間：  </strong>2020-09-28 凌晨 12 : 32 : 29
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
