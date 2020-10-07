@@ -28,7 +28,7 @@
 <meta property="og:description" content="課程名稱：資料結構 CS203 A授課教師：林基成">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-09-27T14:04:27.000Z">
-<meta property="article:modified_time" content="2020-09-27T14:54:13.406Z">
+<meta property="article:modified_time" content="2020-10-07T13:49:00.240Z">
 <meta property="article:author" content="Larry Lai">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -271,7 +271,6 @@
 <li><strong>參考作法：</strong> 定義 <code>i</code> 為當前 <code>hole</code> 的 right child，接著判斷，若是 left child 大於 right child 則 <code>i--</code>，終止條件為 <code>i &lt; bottom</code>，此時若是 <code>i == bottom</code> 則代表最後一層還有 left child，則直接將 left child 放入，最後再呼叫 <code>pushHeapByIndex()</code> 將 <code>val</code> 放入即可。</li>
 <li><strong>參考解法：</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt; <span class="keyword">typename</span> RanIt, <span class="keyword">typename</span> Ty, <span class="keyword">typename</span> Pr &gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">popHeapHoleByIndex</span><span class="params">( RanIt first, <span class="keyword">ptrdiff_t</span> hole, <span class="keyword">ptrdiff_t</span> bottom, Ty &amp;val, Pr pred )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> top = hole, i = hole * <span class="number">2</span> + <span class="number">2</span>; <span class="comment">// i -&gt; right child</span></span><br><span class="line">    <span class="keyword">for</span> (; i &lt; bottom; i = (hole = i) * <span class="number">2</span> + <span class="number">2</span>)</span><br><span class="line">        first[hole] = first[pred(first[i], first[i - <span class="number">1</span>]) ? --i : i];</span><br><span class="line">    <span class="comment">// if only have left child</span></span><br><span class="line">    <span class="keyword">if</span> (i-- == bottom) first[hole] = first[i], hole = i;</span><br><span class="line">    pushHeapByIndex(first, hole, top, val, pred);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
 </li>
 </ul>
 </li>
@@ -298,7 +297,7 @@
     <strong>發表時間：  </strong>2020-09-27 晚上 10 : 04 : 27
   </li>
   <li>
-    <strong>更新時間：  </strong>2020-09-27 晚上 10 : 54 : 13
+    <strong>更新時間：  </strong>2020-10-07 晚上 09 : 49 : 00
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -396,7 +395,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">157</span>
+          <span class="site-state-item-count">159</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -409,7 +408,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">34</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
