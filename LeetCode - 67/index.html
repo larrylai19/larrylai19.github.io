@@ -28,7 +28,7 @@
 <meta property="og:description" content="題目： LeetCode - 67. Add Binary 題目說明給兩個 String 代表兩個二進制表示法的數字，求兩數字的和的二進制表示法。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-10-10T09:04:27.000Z">
-<meta property="article:modified_time" content="2020-10-10T09:19:48.725Z">
+<meta property="article:modified_time" content="2020-10-10T17:13:12.080Z">
 <meta property="article:author" content="Larry Lai">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="LeetCode">
@@ -258,7 +258,7 @@
 <h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給兩個 String 代表兩個二進制表示法的數字，求兩數字的和的二進制表示法。</p>
 <a id="more"></a>
 
-<h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>從兩數字的最後一位開始往前走，分別將數值加到 c 中，最後存到目前結果的前面。直到兩數都走完且 c 為 0 才停止。</p>
+<h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>從兩數字的最後一位開始往前走，分別將數值加到 <code>c</code> 中，最後存到目前結果的前面。直到兩數都走完且 <code>c</code> 為 0 才停止。</p>
 <h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> str;</span><br><span class="line">        <span class="keyword">int</span> i = a.length() - <span class="number">1</span>, j = b.length() - <span class="number">1</span>, c = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> || j &gt;= <span class="number">0</span> || c)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt;= <span class="number">0</span>) c += a[i--] - <span class="string">'0'</span>;</span><br><span class="line">            <span class="keyword">if</span>(j &gt;= <span class="number">0</span>) c += b[j--] - <span class="string">'0'</span>;</span><br><span class="line">            str = <span class="keyword">char</span>(c % <span class="number">2</span> + <span class="string">'0'</span>) + str;</span><br><span class="line">            c /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p><a href="https://github.com/larrylai19/ExampleCode/blob/master/LeetCode/67.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
@@ -283,7 +283,7 @@
     <strong>發表時間：  </strong>2020-10-10 下午 05 : 04 : 27
   </li>
   <li>
-    <strong>更新時間：  </strong>2020-10-10 下午 05 : 19 : 48
+    <strong>更新時間：  </strong>2020-10-11 凌晨 01 : 13 : 12
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
