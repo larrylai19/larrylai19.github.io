@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.larrysprognotes.com/UVa%20-%2011572/</loc>
+    
+    <lastmod>2020-10-23T10:53:57.795Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.larrysprognotes.com/UVa%20-%2011136/</loc>
+    
+    <lastmod>2020-10-23T10:32:06.485Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.larrysprognotes.com/UVa%20-%20978/</loc>
+    
+    <lastmod>2020-10-23T10:32:03.665Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.larrysprognotes.com/UVa%20-%2011286/</loc>
     
     <lastmod>2020-10-21T13:35:55.563Z</lastmod>
@@ -226,14 +247,14 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/module/index.html</loc>
+    <loc>http://www.larrysprognotes.com/categories/index.html</loc>
     
     <lastmod>2020-09-14T10:32:56.965Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/categories/index.html</loc>
+    <loc>http://www.larrysprognotes.com/module/index.html</loc>
     
     <lastmod>2020-09-14T10:32:56.965Z</lastmod>
     
@@ -289,14 +310,14 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/UVa%20-%2010189/</loc>
+    <loc>http://www.larrysprognotes.com/UVa%20-%2010082/</loc>
     
     <lastmod>2020-09-14T10:32:56.960Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/UVa%20-%2010082/</loc>
+    <loc>http://www.larrysprognotes.com/UVa%20-%2010189/</loc>
     
     <lastmod>2020-09-14T10:32:56.960Z</lastmod>
     
@@ -310,14 +331,14 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20994/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20987/</loc>
     
     <lastmod>2020-09-14T10:32:56.959Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20987/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20994/</loc>
     
     <lastmod>2020-09-14T10:32:56.959Z</lastmod>
     
@@ -366,13 +387,6 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%208/</loc>
-    
-    <lastmod>2020-09-14T10:32:56.956Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.larrysprognotes.com/LeetCode%20-%20763/</loc>
     
     <lastmod>2020-09-14T10:32:56.956Z</lastmod>
@@ -380,14 +394,21 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20677/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%208/</loc>
+    
+    <lastmod>2020-09-14T10:32:56.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%2064/</loc>
     
     <lastmod>2020-09-14T10:32:56.955Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%2064/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20677/</loc>
     
     <lastmod>2020-09-14T10:32:56.955Z</lastmod>
     
@@ -464,13 +485,6 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%2050/</loc>
-    
-    <lastmod>2020-09-14T10:32:56.951Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.larrysprognotes.com/LeetCode%20-%205/</loc>
     
     <lastmod>2020-09-14T10:32:56.951Z</lastmod>
@@ -478,14 +492,21 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20451/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%2050/</loc>
+    
+    <lastmod>2020-09-14T10:32:56.951Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20470/</loc>
     
     <lastmod>2020-09-14T10:32:56.950Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20470/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20451/</loc>
     
     <lastmod>2020-09-14T10:32:56.950Z</lastmod>
     
@@ -520,14 +541,14 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20435/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20436/</loc>
     
     <lastmod>2020-09-14T10:32:56.948Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20436/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20435/</loc>
     
     <lastmod>2020-09-14T10:32:56.948Z</lastmod>
     
@@ -653,14 +674,14 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20165/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%2017/</loc>
     
     <lastmod>2020-09-14T10:32:56.941Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%2017/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20165/</loc>
     
     <lastmod>2020-09-14T10:32:56.941Z</lastmod>
     
@@ -681,13 +702,6 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%201536/</loc>
-    
-    <lastmod>2020-09-14T10:32:56.940Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.larrysprognotes.com/LeetCode%20-%2016/</loc>
     
     <lastmod>2020-09-14T10:32:56.940Z</lastmod>
@@ -695,14 +709,21 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%2015/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%201536/</loc>
+    
+    <lastmod>2020-09-14T10:32:56.940Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20146/</loc>
     
     <lastmod>2020-09-14T10:32:56.939Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20146/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%2015/</loc>
     
     <lastmod>2020-09-14T10:32:56.939Z</lastmod>
     
@@ -716,14 +737,14 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%201305/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%2013/</loc>
     
     <lastmod>2020-09-14T10:32:56.938Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%2013/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%201305/</loc>
     
     <lastmod>2020-09-14T10:32:56.938Z</lastmod>
     
@@ -733,6 +754,13 @@
     <loc>http://www.larrysprognotes.com/LeetCode%20-%20143/</loc>
     
     <lastmod>2020-09-14T10:32:56.938Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%201277/</loc>
+    
+    <lastmod>2020-09-14T10:32:56.937Z</lastmod>
     
   </url>
   
@@ -751,13 +779,6 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%201277/</loc>
-    
-    <lastmod>2020-09-14T10:32:56.937Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.larrysprognotes.com/LeetCode%20-%20129/</loc>
     
     <lastmod>2020-09-14T10:32:56.937Z</lastmod>
@@ -765,14 +786,14 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%2012/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%201143/</loc>
     
     <lastmod>2020-09-14T10:32:56.936Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%201143/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%2012/</loc>
     
     <lastmod>2020-09-14T10:32:56.936Z</lastmod>
     
@@ -807,14 +828,14 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%2023/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%204/</loc>
     
     <lastmod>2020-09-14T10:32:56.933Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%204/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%2023/</loc>
     
     <lastmod>2020-09-14T10:32:56.933Z</lastmod>
     
@@ -849,13 +870,6 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%201032/</loc>
-    
-    <lastmod>2020-09-14T10:32:56.931Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.larrysprognotes.com/LeetCode%20-%20993/</loc>
     
     <lastmod>2020-09-14T10:32:56.931Z</lastmod>
@@ -863,14 +877,21 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20905/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%201032/</loc>
+    
+    <lastmod>2020-09-14T10:32:56.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%209/</loc>
     
     <lastmod>2020-09-14T10:32:56.930Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%209/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20905/</loc>
     
     <lastmod>2020-09-14T10:32:56.930Z</lastmod>
     
@@ -884,13 +905,6 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20876/</loc>
-    
-    <lastmod>2020-09-14T10:32:56.929Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.larrysprognotes.com/LeetCode%20-%20844/</loc>
     
     <lastmod>2020-09-14T10:32:56.929Z</lastmod>
@@ -898,9 +912,9 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20771/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20876/</loc>
     
-    <lastmod>2020-09-14T10:32:56.928Z</lastmod>
+    <lastmod>2020-09-14T10:32:56.929Z</lastmod>
     
   </url>
   
@@ -919,9 +933,9 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20705/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20771/</loc>
     
-    <lastmod>2020-09-14T10:32:56.927Z</lastmod>
+    <lastmod>2020-09-14T10:32:56.928Z</lastmod>
     
   </url>
   
@@ -933,9 +947,9 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20520/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20705/</loc>
     
-    <lastmod>2020-09-14T10:32:56.925Z</lastmod>
+    <lastmod>2020-09-14T10:32:56.927Z</lastmod>
     
   </url>
   
@@ -947,9 +961,23 @@
   </url>
   
   <url>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20520/</loc>
+    
+    <lastmod>2020-09-14T10:32:56.925Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.larrysprognotes.com/LeetCode%20-%20543/</loc>
     
     <lastmod>2020-09-14T10:32:56.925Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20409/</loc>
+    
+    <lastmod>2020-09-14T10:32:56.924Z</lastmod>
     
   </url>
   
@@ -968,21 +996,14 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20409/</loc>
-    
-    <lastmod>2020-09-14T10:32:56.924Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20387/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20383/</loc>
     
     <lastmod>2020-09-14T10:32:56.923Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20383/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20387/</loc>
     
     <lastmod>2020-09-14T10:32:56.923Z</lastmod>
     
@@ -1017,14 +1038,14 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20283/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20278/</loc>
     
     <lastmod>2020-09-14T10:32:56.921Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%20278/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%20283/</loc>
     
     <lastmod>2020-09-14T10:32:56.921Z</lastmod>
     
@@ -1038,13 +1059,6 @@
   </url>
   
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode%20-%2020/</loc>
-    
-    <lastmod>2020-09-14T10:32:56.920Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.larrysprognotes.com/LeetCode%20-%2021/</loc>
     
     <lastmod>2020-09-14T10:32:56.920Z</lastmod>
@@ -1053,6 +1067,13 @@
   
   <url>
     <loc>http://www.larrysprognotes.com/LeetCode%20-%20202/</loc>
+    
+    <lastmod>2020-09-14T10:32:56.920Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.larrysprognotes.com/LeetCode%20-%2020/</loc>
     
     <lastmod>2020-09-14T10:32:56.920Z</lastmod>
     
