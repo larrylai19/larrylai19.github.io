@@ -28,16 +28,16 @@
 <meta property="og:description" content="題目： LeetCode - 987. Vertical Order Traversal of a Binary Tree 題目說明給一個 Binary Tree，將 Tree 加上虛擬座標，root 為 (0, 0)，左邊節點為 (x - 1, y - 1)，右邊節點為 (x + 1, y - 1)。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-08-07T12:04:27.000Z">
-<meta property="article:modified_time" content="2020-09-14T10:32:56.959Z">
+<meta property="article:modified_time" content="2020-10-26T15:42:04.495Z">
 <meta property="article:author" content="Larry Lai">
 <meta property="article:tag" content="C++">
-<meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="Vector">
+<meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="Map">
-<meta property="article:tag" content="Recursive">
 <meta property="article:tag" content="Tree">
-<meta property="article:tag" content="Priority queue">
+<meta property="article:tag" content="Recursive">
 <meta property="article:tag" content="LeetCode 30 August">
+<meta property="article:tag" content="Priority queue">
 <meta property="article:tag" content="LeetCode - Medium">
 <meta name="twitter:card" content="summary">
 
@@ -264,7 +264,11 @@
 <h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>為了方便排序所以將 y 軸反轉，使用 <code>map&lt;pair&lt;int, int&gt;, priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt;&gt;</code> 紀錄資料，由於 <code>map</code> 的特性，會依照 <code>pair</code> 的 first 排序，所以裡面存放 {y, x}，由於 <code>priority_queue</code> 會依照資料的大小排序，所以用來存放數值。接著透過遞迴取得資料最後再存入 Vector 即可。</p>
 <h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">verticalTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> min_x = INT_MAX, max_x = INT_MIN;</span><br><span class="line">        <span class="built_in">map</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt;&gt; m_;</span><br><span class="line">        extract(root, <span class="number">0</span>, <span class="number">0</span>, m_, min_x, max_x);</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">v</span><span class="params">(max_x - min_x + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; m : m_)</span><br><span class="line">            <span class="keyword">while</span>(!m.second.empty())</span><br><span class="line">                v[m.first.second - min_x].emplace_back(m.second.top()), m.second.pop();</span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">extract</span><span class="params">(TreeNode* root, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="built_in">map</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt;&gt;&amp; m_, <span class="keyword">int</span>&amp; min_x, <span class="keyword">int</span>&amp; max_x)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">        min_x = <span class="built_in">min</span>(min_x, x);</span><br><span class="line">        max_x = <span class="built_in">max</span>(max_x, x);</span><br><span class="line">        m_[&#123;y, x&#125;].push(root-&gt;val);</span><br><span class="line">        extract(root-&gt;left, x - <span class="number">1</span>, y + <span class="number">1</span>, m_, min_x, max_x);</span><br><span class="line">        extract(root-&gt;right, x + <span class="number">1</span>, y + <span class="number">1</span>, m_, min_x, max_x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/LeetCode/987.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
+<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/LeetCode/987-1.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
+<p>2020/10/26 rewrite</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">verticalTraversal</span><span class="params">(TreeNode* root)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> min_x = INT_MAX, max_x = INT_MIN;</span><br><span class="line">        <span class="built_in">map</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt;&gt; _m;</span><br><span class="line">        </span><br><span class="line">        function&lt;<span class="keyword">void</span>(TreeNode*, <span class="keyword">int</span>, <span class="keyword">int</span>)&gt; traversal = [&amp;](TreeNode* r, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!r) <span class="keyword">return</span>;</span><br><span class="line">            min_x = <span class="built_in">min</span>(x, min_x);</span><br><span class="line">            max_x = <span class="built_in">max</span>(x, max_x);</span><br><span class="line">            _m[&#123;y, x&#125;].push(r-&gt;val);</span><br><span class="line">            traversal(r-&gt;left, x - <span class="number">1</span>, y + <span class="number">1</span>);</span><br><span class="line">            traversal(r-&gt;right, x + <span class="number">1</span>, y + <span class="number">1</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        traversal(root, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">v</span><span class="params">(max_x - min_x + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; [pos, pq] : _m) <span class="keyword">while</span> (!pq.empty()) v[pos.second - min_x].emplace_back(pq.top()), pq.pop();</span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/LeetCode/987-2.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
 
     </div>
 
@@ -286,7 +290,7 @@
     <strong>發表時間：  </strong>2020-08-07 晚上 08 : 04 : 27
   </li>
   <li>
-    <strong>更新時間：  </strong>2020-09-14 晚上 06 : 32 : 56
+    <strong>更新時間：  </strong>2020-10-26 晚上 11 : 42 : 04
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -299,13 +303,13 @@
           
           <div class="post-tags">
               <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
-              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
               <a href="/tags/Vector/" rel="tag"><i class="fa fa-tag"></i> Vector</a>
+              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
               <a href="/tags/Map/" rel="tag"><i class="fa fa-tag"></i> Map</a>
-              <a href="/tags/Recursive/" rel="tag"><i class="fa fa-tag"></i> Recursive</a>
               <a href="/tags/Tree/" rel="tag"><i class="fa fa-tag"></i> Tree</a>
-              <a href="/tags/Priority-queue/" rel="tag"><i class="fa fa-tag"></i> Priority queue</a>
+              <a href="/tags/Recursive/" rel="tag"><i class="fa fa-tag"></i> Recursive</a>
               <a href="/tags/LeetCode-30-August/" rel="tag"><i class="fa fa-tag"></i> LeetCode 30 August</a>
+              <a href="/tags/Priority-queue/" rel="tag"><i class="fa fa-tag"></i> Priority queue</a>
               <a href="/tags/LeetCode-Medium/" rel="tag"><i class="fa fa-tag"></i> LeetCode - Medium</a>
           </div>
 
