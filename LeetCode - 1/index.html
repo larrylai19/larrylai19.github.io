@@ -28,11 +28,11 @@
 <meta property="og:description" content="題目： LeetCode - 1. Two Sum 題目說明給一個陣列和一個 target，找出陣列中兩數相加等於 target 的 index。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-07-11T07:04:27.000Z">
-<meta property="article:modified_time" content="2020-09-14T10:32:56.913Z">
+<meta property="article:modified_time" content="2020-11-03T18:09:32.653Z">
 <meta property="article:author" content="Larry Lai">
 <meta property="article:tag" content="C++">
-<meta property="article:tag" content="Vector">
 <meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="Vector">
 <meta property="article:tag" content="Unordered_map">
 <meta property="article:tag" content="LeetCode - Easy">
 <meta name="twitter:card" content="summary">
@@ -260,7 +260,7 @@
 <a id="more"></a>
 
 <h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>使用 <code>unordered_map&lt;int, int&gt;</code> 存放資料，key 存放 nums 裡面的元素的值，value 存放該值的 <code>index</code>。當每次訪問 nums 的元素時，若 <code>target - nums[i]</code> 的值在 map 中有出現表示找到答案，即為 <code>map[target - nums[i]]</code> 和 <code>i</code>，若沒出現則將 <code>{nums[i]], i}</code> 插入 map。</p>
-<h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; <span class="built_in">map</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">map</span>.count(target - nums[i]))</span><br><span class="line">            &#123;</span><br><span class="line">                res.push_back(<span class="built_in">map</span>[target - nums[i]]);</span><br><span class="line">                res.push_back(i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">map</span>[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (m.count(target - nums[i])) <span class="keyword">return</span> &#123; m[target - nums[i]], i &#125;;</span><br><span class="line">            m[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p><a href="https://github.com/larrylai19/ExampleCode/blob/master/LeetCode/1.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
 
@@ -284,7 +284,7 @@
     <strong>發表時間：  </strong>2020-07-11 下午 03 : 04 : 27
   </li>
   <li>
-    <strong>更新時間：  </strong>2020-09-14 晚上 06 : 32 : 56
+    <strong>更新時間：  </strong>2020-11-04 凌晨 02 : 09 : 32
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -297,8 +297,8 @@
           
           <div class="post-tags">
               <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
-              <a href="/tags/Vector/" rel="tag"><i class="fa fa-tag"></i> Vector</a>
               <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
+              <a href="/tags/Vector/" rel="tag"><i class="fa fa-tag"></i> Vector</a>
               <a href="/tags/Unordered-map/" rel="tag"><i class="fa fa-tag"></i> Unordered_map</a>
               <a href="/tags/LeetCode-Easy/" rel="tag"><i class="fa fa-tag"></i> LeetCode - Easy</a>
           </div>
