@@ -28,7 +28,7 @@
 <meta property="og:description" content="題目： UVa - 11034 - Ferry Loading IV 題目說明有一艘可以載車子的船，兩岸分別有一些要到達對岸的車子，船有長度限制，在不超過船的長度限制的前提下，要放多少輛車都可以。在岸邊的車子有先後順序之分，在載完前面的車子前，不可以載後面的車子。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-11-13T15:04:27.000Z">
-<meta property="article:modified_time" content="2020-11-13T15:26:13.899Z">
+<meta property="article:modified_time" content="2020-11-14T11:42:17.123Z">
 <meta property="article:author" content="Larry Lai">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="UVa">
@@ -263,6 +263,7 @@
 <h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// reference: https://ppt.cc/fNbc8x</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">auto</span> __ = []</span><br><span class="line">&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> l, m;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; l &gt;&gt; m;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 0 for left, 1 for right</span></span><br><span class="line">        <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; bank[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span> [tmp, str] = make_pair(<span class="number">0</span>, <span class="built_in">string</span>());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; tmp &gt;&gt; str;</span><br><span class="line">            str == <span class="string">"left"</span> ? bank[<span class="number">0</span>].push(tmp) : bank[<span class="number">1</span>].push(tmp);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>, cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!bank[<span class="number">0</span>].empty() || !bank[<span class="number">1</span>].empty())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> Cap = l * <span class="number">100</span>;</span><br><span class="line">            <span class="keyword">while</span> (!bank[cur].empty() &amp;&amp; bank[cur].front() &lt;= Cap)</span><br><span class="line">                Cap -= bank[cur].front(), bank[cur].pop();</span><br><span class="line">            cur ^= <span class="number">1</span>;</span><br><span class="line">            ++cnt;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; cnt &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><a href="https://github.com/larrylai19/ExampleCode/blob/master/UVa/11034.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a href="https://ppt.cc/fNbc8x" target="_blank" rel="noopener">UVa 10901 - Ferry Loading III.cpp</a></p>
 
     </div>
 
@@ -284,7 +285,7 @@
     <strong>發表時間：  </strong>2020-11-13 晚上 11 : 04 : 27
   </li>
   <li>
-    <strong>更新時間：  </strong>2020-11-13 晚上 11 : 26 : 13
+    <strong>更新時間：  </strong>2020-11-14 晚上 07 : 42 : 17
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -310,7 +311,10 @@
     <a href="/UVa%20-%2010901/" rel="prev" title="UVa - 10901 解題紀錄">
       <i class="fa fa-chevron-left"></i> UVa - 10901 解題紀錄
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/UVa%20-%20168/" rel="next" title="UVa - 168 解題紀錄">
+      UVa - 168 解題紀錄 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -369,7 +373,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#題目說明"><span class="nav-number">1.</span> <span class="nav-text">題目說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解題思路"><span class="nav-number">2.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#參考解法"><span class="nav-number">3.</span> <span class="nav-text">參考解法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#題目說明"><span class="nav-number">1.</span> <span class="nav-text">題目說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解題思路"><span class="nav-number">2.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#參考解法"><span class="nav-number">3.</span> <span class="nav-text">參考解法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -385,7 +389,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">181</span>
+          <span class="site-state-item-count">183</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
