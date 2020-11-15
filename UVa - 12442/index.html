@@ -20,24 +20,23 @@
     var CONFIG = {"hostname":"www.larrysprognotes.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="題目： LeetCode - 143. Reorder List 題目說明給一個 List，依照題目的要求重新排序。">
+  <meta name="description" content="題目： UVa - 12442 - Forwarding Emails 題目說明有一個小鎮，裡面的居民每個人都只會給另一個人寄信，求把信寄給哪位居民可以讓最多人看到這封信，若有相同者則取較小者。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode - 143 解題紀錄 &#x2F; August LeetCoding Challenge Day 20">
-<meta property="og:url" content="http://www.larrysprognotes.com/LeetCode%20-%20143/index.html">
+<meta property="og:title" content="UVa - 12442 解題紀錄">
+<meta property="og:url" content="http://www.larrysprognotes.com/UVa%20-%2012442/index.html">
 <meta property="og:site_name" content="Larry&#39;s notes">
-<meta property="og:description" content="題目： LeetCode - 143. Reorder List 題目說明給一個 List，依照題目的要求重新排序。">
+<meta property="og:description" content="題目： UVa - 12442 - Forwarding Emails 題目說明有一個小鎮，裡面的居民每個人都只會給另一個人寄信，求把信寄給哪位居民可以讓最多人看到這封信，若有相同者則取較小者。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-08-20T12:04:27.000Z">
-<meta property="article:modified_time" content="2020-09-14T10:32:56.938Z">
+<meta property="article:published_time" content="2020-11-15T11:04:27.000Z">
+<meta property="article:modified_time" content="2020-11-15T13:12:29.027Z">
 <meta property="article:author" content="Larry Lai">
 <meta property="article:tag" content="C++">
-<meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="List">
-<meta property="article:tag" content="LeetCode 30 August">
-<meta property="article:tag" content="LeetCode - Medium">
+<meta property="article:tag" content="Vector">
+<meta property="article:tag" content="UVa">
+<meta property="article:tag" content="Recursive">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://www.larrysprognotes.com/LeetCode%20-%20143/">
+<link rel="canonical" href="http://www.larrysprognotes.com/UVa%20-%2012442/">
 
 
 <script id="page-configurations">
@@ -50,7 +49,7 @@
   };
 </script>
 
-  <title>LeetCode - 143 解題紀錄 / August LeetCoding Challenge Day 20 | Larry's notes</title>
+  <title>UVa - 12442 解題紀錄 | Larry's notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38280830-2"></script>
     <script>
@@ -209,7 +208,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/LeetCode%20-%20143/">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/UVa%20-%2012442/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/avatar.jpg">
@@ -222,7 +221,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode - 143 解題紀錄 / August LeetCoding Challenge Day 20
+          UVa - 12442 解題紀錄
         </h1>
 
         <div class="post-meta">
@@ -232,7 +231,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-08-20 20:04:27" itemprop="dateCreated datePublished" datetime="2020-08-20T20:04:27+08:00">2020-08-20</time>
+              <time title="創建時間：2020-11-15 19:04:27" itemprop="dateCreated datePublished" datetime="2020-11-15T19:04:27+08:00">2020-11-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,7 +239,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                  <a href="/categories/UVa/" itemprop="url" rel="index"><span itemprop="name">UVa</span></a>
                 </span>
             </span>
 
@@ -255,12 +254,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>題目： <a href="https://leetcode.com/problems/reorder-list/" target="_blank" rel="noopener">LeetCode - 143. Reorder List</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給一個 List，依照題目的要求重新排序。<a id="more"></a><br><strong>※</strong> 題目規定不能改變 <code>node</code> 的值。</p>
-<h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>我們先取得中間的節點 ( 方法可以參考本篇文章：<a href="../LeetCode%20-%20876/" target="_blank">LeetCode - 876 解題紀錄</a> )，接著將中間到尾端的節點反轉，最後依照要求重新連接即可。</p>
-<h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">reorderList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">auto</span> mid = findMid(head), l1 = head, l2 = mid-&gt;next;</span><br><span class="line">        mid-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">        l2 = _reverse(l2);</span><br><span class="line">        <span class="keyword">while</span>(l1 &amp;&amp; l2)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> _next = l1-&gt;next;</span><br><span class="line">            l1-&gt;next = l2;</span><br><span class="line">            l2 = l2-&gt;next;</span><br><span class="line">            l1-&gt;next-&gt;next = _next;</span><br><span class="line">            l1 = _next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">findMid</span><span class="params">(ListNode* head)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> slow = head, fast = head;</span><br><span class="line">        <span class="keyword">while</span>(fast &amp;&amp; fast-&gt;next) fast = fast-&gt;next-&gt;next, slow = slow-&gt;next;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ListNode* _reverse(ListNode* head)</span><br><span class="line">    &#123;</span><br><span class="line">        ListNode* newhead = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span>(head)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> _next = head-&gt;next;</span><br><span class="line">            head-&gt;next = newhead;</span><br><span class="line">            newhead = head;</span><br><span class="line">            head = _next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newhead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <p>題目： <a href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=3873" target="_blank" rel="noopener">UVa - 12442 - Forwarding Emails</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一個小鎮，裡面的居民每個人都只會給另一個人寄信，求把信寄給哪位居民可以讓最多人看到這封信，若有相同者則取較小者。</p>
+<a id="more"></a>
 
-<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/LeetCode/143.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
+<p><strong>Input：</strong> 第一行為一整數 <code>T</code>，代表有 <code>T</code> 組測資，每組測資的第一行為一整數 <code>N</code>，接下來 <code>N</code> 行每行都有兩個整數 <code>u</code>、<code>v</code>，代表居民 <code>u</code> 會把信寄給居民 <code>v</code>。</p>
+<p><strong>Output：</strong> 輸出寄信給誰可以讓最多的居民看到這封信，若有相同者則取較小者。</p>
+<h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>DFS 模擬即可，由於會 TLE，所以進行一點剪枝，多使用一個陣列紀錄某位居民是否已經被模擬過了，若在前面被模擬過了則就不需要在模擬第一個寄信給這位居民了，因為前面模擬的是另一個居民會寄給這位居民，一定會比直接寄信給這位居民的人數還要多。例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">若居民有 <span class="number">3</span> 人，且寄信關係為：</span><br><span class="line"></span><br><span class="line"><span class="number">1</span> <span class="number">3</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line">則寄信給第一位居民時會再寄給第三位居民，那遍歷到第三位居民時就不需要在模擬一次了，</span><br><span class="line">因為由第一位寄給第三位，一定會比直接寄給第三位多。</span><br></pre></td></tr></table></figure>
+
+<h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LOOP(n) for(int I = 0; I &lt; n; ++I)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// reference: https://ppt.cc/fXuBwx</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">auto</span> __ = []</span><br><span class="line">&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line"></span><br><span class="line">    LOOP(T)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> N;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">adj</span><span class="params">(N + <span class="number">1</span>)</span></span>;</span><br><span class="line">        LOOP(N)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> u, v;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v;</span><br><span class="line">            adj[u] = v;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> _max = INT_MIN, ret = <span class="number">0</span>;</span><br><span class="line">        vector&lt;bool&gt; visited(N + 1), dfsV;</span><br><span class="line"></span><br><span class="line">        function&lt;<span class="keyword">int</span>(<span class="keyword">int</span>)&gt; dfs = [&amp;](<span class="keyword">int</span> u) -&gt; <span class="keyword">int</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 如果已經寄過了就直接回傳，避免環</span></span><br><span class="line">            <span class="keyword">if</span> (dfsV[u]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            visited[u] = dfsV[u] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> + dfs(adj[u]);</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 如果 i 在前面被做過一次那就不用再做一次了，因為前面是從某個人寄到 i，</span></span><br><span class="line">            <span class="comment">// 一定會比直接寄到 i 還要多人</span></span><br><span class="line">            <span class="keyword">if</span> (visited[i]) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">            dfsV.assign(N + <span class="number">1</span>, <span class="literal">false</span>);</span><br><span class="line">            <span class="keyword">int</span> tmp = dfs(i);</span><br><span class="line">            <span class="keyword">if</span> (tmp &gt; _max) _max = tmp, ret = i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Case "</span> &lt;&lt; I + <span class="number">1</span> &lt;&lt; <span class="string">": "</span> &lt;&lt; ret &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/UVa/12442.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a href="https://ppt.cc/fXuBwx" target="_blank" rel="noopener">[UVA] 12442 - Forwarding Emails</a></p>
 
     </div>
 
@@ -276,13 +282,13 @@
   </li>
   <li class="post-copyright-link">
     <strong>文章連結：</strong>
-    <a href="http://www.larrysprognotes.com/LeetCode%20-%20143/" title="LeetCode - 143 解題紀錄 &#x2F; August LeetCoding Challenge Day 20">http://www.larrysprognotes.com/LeetCode - 143/</a>
+    <a href="http://www.larrysprognotes.com/UVa%20-%2012442/" title="UVa - 12442 解題紀錄">http://www.larrysprognotes.com/UVa - 12442/</a>
   </li>
   <li>
-    <strong>發表時間：  </strong>2020-08-20 晚上 08 : 04 : 27
+    <strong>發表時間：  </strong>2020-11-15 晚上 07 : 04 : 27
   </li>
   <li>
-    <strong>更新時間：  </strong>2020-09-14 晚上 06 : 32 : 56
+    <strong>更新時間：  </strong>2020-11-15 晚上 09 : 12 : 29
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -295,10 +301,9 @@
           
           <div class="post-tags">
               <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
-              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
-              <a href="/tags/List/" rel="tag"><i class="fa fa-tag"></i> List</a>
-              <a href="/tags/LeetCode-30-August/" rel="tag"><i class="fa fa-tag"></i> LeetCode 30 August</a>
-              <a href="/tags/LeetCode-Medium/" rel="tag"><i class="fa fa-tag"></i> LeetCode - Medium</a>
+              <a href="/tags/Vector/" rel="tag"><i class="fa fa-tag"></i> Vector</a>
+              <a href="/tags/UVa/" rel="tag"><i class="fa fa-tag"></i> UVa</a>
+              <a href="/tags/Recursive/" rel="tag"><i class="fa fa-tag"></i> Recursive</a>
           </div>
 
         
@@ -307,13 +312,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/LeetCode%20-%20824/" rel="prev" title="LeetCode - 824 解題紀錄 / August LeetCoding Challenge Day 19">
-      <i class="fa fa-chevron-left"></i> LeetCode - 824 解題紀錄 / August LeetCoding Challenge Day 19
+    <a href="/UVa%20-%2011906/" rel="prev" title="UVa - 11906 解題紀錄">
+      <i class="fa fa-chevron-left"></i> UVa - 11906 解題紀錄
     </a></div>
-      <div class="post-nav-item">
-    <a href="/LeetCode%20-%20905/" rel="next" title="LeetCode - 905 解題紀錄 / August LeetCoding Challenge Day 21">
-      LeetCode - 905 解題紀錄 / August LeetCoding Challenge Day 21 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -372,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#題目說明"><span class="nav-number">1.</span> <span class="nav-text">題目說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解題思路"><span class="nav-number">2.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#參考解法"><span class="nav-number">3.</span> <span class="nav-text">參考解法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#題目說明"><span class="nav-number">1.</span> <span class="nav-text">題目說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解題思路"><span class="nav-number">2.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#參考解法"><span class="nav-number">3.</span> <span class="nav-text">參考解法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
