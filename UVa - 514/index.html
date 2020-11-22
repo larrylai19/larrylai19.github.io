@@ -28,7 +28,7 @@
 <meta property="og:description" content="題目： UVa - 514 - Rails 題目說明給一個整數 n，代表有 1, 2, ..., n 個火車，每個火車入站可以直接出站或是等後面的火車入站並出站後再出站，簡單來講就是像 Stack 一樣。給一串數字代表火車出站的順序，若可以達成則輸出 &quot;Yes&quot; 否則輸出 &quot;No&quot;。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-11-06T15:04:27.000Z">
-<meta property="article:modified_time" content="2020-11-06T17:18:37.158Z">
+<meta property="article:modified_time" content="2020-11-22T17:00:45.859Z">
 <meta property="article:author" content="Larry Lai">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="UVa">
@@ -261,7 +261,7 @@
 <h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>使用 Stack 模擬火車入站出站，使用 Queue 儲存出站順序，若是 Stack 的 <code>top()</code> 與 Queue 的 <code>front()</code> 相同則兩者都不斷 <code>pop()</code>，直到兩者不相同或是 Stack 為空，結束後若 Stack 為空則表示這個順序是可行的。</p>
 <h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">auto</span> __ = []</span><br><span class="line">&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T, tmp;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; T &amp;&amp; T)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; tmp &amp;&amp; tmp)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">            <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">            q.push(tmp);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; T; ++i) <span class="built_in">cin</span> &gt;&gt; tmp, q.push(tmp);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= T; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                s.push(i);</span><br><span class="line">                <span class="keyword">while</span> (!s.empty() &amp;&amp; s.top() == q.front()) s.pop(), q.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; (s.empty() ? <span class="string">"Yes\n"</span> : <span class="string">"No\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/UVa/514.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
+<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/UVa/00514.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
 
     </div>
 
@@ -283,7 +283,7 @@
     <strong>發表時間：  </strong>2020-11-06 晚上 11 : 04 : 27
   </li>
   <li>
-    <strong>更新時間：  </strong>2020-11-07 凌晨 01 : 18 : 37
+    <strong>更新時間：  </strong>2020-11-23 凌晨 01 : 00 : 45
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -388,7 +388,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">191</span>
+          <span class="site-state-item-count">192</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -401,7 +401,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

@@ -28,7 +28,7 @@
 <meta property="og:description" content="題目： UVa - 732 - Anagrams by Stack 題目說明給兩個字串，str、target，求 str 透過 Stack 的 push() 及 pop() 後能否轉換成 target，若可以則輸出所有能達成的操作順序。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-11-06T16:04:27.000Z">
-<meta property="article:modified_time" content="2020-11-06T17:18:29.288Z">
+<meta property="article:modified_time" content="2020-11-22T17:00:57.605Z">
 <meta property="article:author" content="Larry Lai">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="UVa">
@@ -261,7 +261,7 @@
 <h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>使用 DFS 即可，對於每層 DFS，可以 <code>push()</code> 進 Stack 也可以 <code>pop()</code> 出 Stack，先直接 <code>push()</code> 並往下執行，接著判斷，若 Stack 的 <code>top()</code> 等於當前檢查到的字元則 <code>pop()</code> 並往下執行。</p>
 <h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">auto</span> __ = []</span><br><span class="line">&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str, target;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; s;</span><br><span class="line"></span><br><span class="line">    function&lt;<span class="keyword">void</span>(<span class="keyword">int</span>, <span class="keyword">int</span>, <span class="built_in">string</span>)&gt; dfs = [&amp;](<span class="keyword">int</span> i1, <span class="keyword">int</span> i2, <span class="built_in">string</span> ret)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i2 == target.length()) &#123; <span class="built_in">cout</span> &lt;&lt; ret &lt;&lt; <span class="string">'\n'</span>; <span class="keyword">return</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (i1 &lt; str.length())</span><br><span class="line">        &#123;</span><br><span class="line">            s.push(str[i1]);</span><br><span class="line">            dfs(i1 + <span class="number">1</span>, i2, ret + (ret.empty() ? <span class="string">"i"</span> : <span class="string">" i"</span>));</span><br><span class="line">            s.pop();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!s.empty() &amp;&amp; s.top() == target[i2])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> tmp = s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            dfs(i1, i2 + <span class="number">1</span>, ret + (ret.empty() ? <span class="string">"o"</span> : <span class="string">" o"</span>));</span><br><span class="line">            s.push(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; str &gt;&gt; target)</span><br><span class="line">    &#123;</span><br><span class="line">        s = <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt;();</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"[\n"</span>;</span><br><span class="line">        <span class="keyword">if</span> (str.length() == target.length() &amp;&amp; !str.empty()) dfs(<span class="number">0</span>, <span class="number">0</span>, <span class="string">""</span>);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"]\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/UVa/732.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
+<p><a href="https://github.com/larrylai19/ExampleCode/blob/master/UVa/00732.cpp" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
 
     </div>
 
@@ -283,7 +283,7 @@
     <strong>發表時間：  </strong>2020-11-07 凌晨 12 : 04 : 27
   </li>
   <li>
-    <strong>更新時間：  </strong>2020-11-07 凌晨 01 : 18 : 29
+    <strong>更新時間：  </strong>2020-11-23 凌晨 01 : 00 : 57
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -388,7 +388,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">191</span>
+          <span class="site-state-item-count">192</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -401,7 +401,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
