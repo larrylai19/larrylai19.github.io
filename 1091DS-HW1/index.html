@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-L.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/L-favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/L-favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/L-favicon-32x32.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.larrysprognotes.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="課程名稱：資料結構 CS203 A授課教師：林基成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Homework 1 - Unordered_set">
+<meta property="og:url" content="http://www.larrysprognotes.com/1091DS-HW1/index.html">
+<meta property="og:site_name" content="Larry&#39;s notes">
+<meta property="og:description" content="課程名稱：資料結構 CS203 A授課教師：林基成">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-09-18T14:04:27.000Z">
+<meta property="article:modified_time" content="2020-12-07T15:06:11.489Z">
+<meta property="article:author" content="Larry Lai">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.larrysprognotes.com/1091DS-HW1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>Homework 1 - Unordered_set | Larry's notes</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38280830-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-38280830-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Larry's notes</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/larrylai19" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/1091DS-HW1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Homework 1 - Unordered_set
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-09-18 22:04:27" itemprop="dateCreated datePublished" datetime="2020-09-18T22:04:27+08:00">2020-09-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1091DataStructures-YzuCse/" itemprop="url" rel="index"><span itemprop="name">1091DataStructures-YzuCse</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>課程名稱：資料結構 CS203 A<br>授課教師：林基成<a id="more"></a><br>發放時間：2020-09-16<br>截止時間：2020-09-22</p>
+<hr>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>完成 Unordered_set 的部分函式。</p>
+<h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>下面是依照我寫的順序來排序的。</p>
+<ol>
+<li><p><code>void assignGrow(const size_type cells, const value_type val)</code></p>
+<ul>
+<li><strong>函式功能：</strong> 將動態陣列的大小擴張為 <code>cells</code>，並且將值都設為 <code>val</code>。</li>
+<li><strong>參考作法：</strong> 先判斷原本的動態陣列是否存在，若存在則先刪除，接著重新宣告一個 <code>cells</code> 大小的動態陣列，再將值一一放入，最後將 pointer 的位置更新即可。</li>
+<li><strong>參考解法：</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// set the elements stored here to cells copies of val</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">assignGrow</span><span class="params">( <span class="keyword">const</span> size_type cells, <span class="keyword">const</span> value_type val )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (myData.myFirst) <span class="keyword">delete</span>[] myData.myFirst;</span><br><span class="line">    myData.myLast = myData.myEnd = myData.myFirst = <span class="keyword">new</span> value_type[cells];</span><br><span class="line">    <span class="keyword">do</span> *myData.myLast++ = val; <span class="keyword">while</span> (++myData.myEnd != myData.myFirst + cells);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>size_type bucket_size(size_type n) const</code></p>
+<ul>
+<li><strong>函式功能：</strong> 回傳第 <code>n</code> 個 bucket 的元素個數。</li>
+<li><strong>參考作法：</strong> 先找出第 <code>n</code> 個 bucket 的頭部的 iterator，即為 <code>*(myVec.myData.myFirst + n * 2)</code>，因為 <code>myVec</code> 會儲存每個 bucket 的頭部及尾端的 iterator，所以 <code>n</code> 需要乘以 2。接著使用迴圈直到 <code>iter</code> 到了第 <code>n</code> 個 bucket 的尾端，最後判斷 <code>iter</code> 是否等於 <code>myList.end()</code> 若是相等代表這個 bucket 是空的，否則回傳 <code>++tmp</code>，因為迴圈到了尾巴就退出了，會少算一個元素。</li>
+<li><strong>參考解法：</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Returns the number of elements in bucket n.</span></span><br><span class="line"><span class="function">size_type <span class="title">bucket_size</span><span class="params">( size_type n )</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> head = &amp;myVec.myData.myFirst[n * <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">return</span> *head == myList.<span class="built_in">end</span>() ? <span class="number">0</span> : <span class="built_in">std</span>::distance(*head, *(head + <span class="number">1</span>)) + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//int cnt&#123;&#125;;</span></span><br><span class="line">    <span class="comment">//auto iter = myVec.myData.myFirst[n * 2];</span></span><br><span class="line">    <span class="comment">//while (iter != myVec.myData.myFirst[n * 2 + 1]) ++cnt, ++iter;</span></span><br><span class="line">    <span class="comment">//return iter == myList.end() ? 0 : ++cnt;</span></span><br><span class="line">    <span class="comment">// also be fine</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>iterator find(const key_type &amp;keyVal)</code></p>
+<ul>
+<li><strong>函式功能：</strong> 若是 <code>keyVal</code> 存在則回傳該值位於的 node 的 iterator，否則回傳 <code>myList.end()</code>。</li>
+<li><strong>參考作法：</strong> 先找出 <code>keyVal</code> 的 hashCode，代表位於第幾個 bucket，接著遍歷這個 bucket 直到尾端或是找到值與 <code>keyVal</code> 相同的 node，最後判斷 <code>iter</code> 是否與 <code>myList.end()</code> 相等，若相等代表這個 bucket 是空的，則值也不會存在。否則判斷 <code>*iter</code> 是否與 <code>keyVal</code> 相等，若相等回傳 iter，否則回傳 <code>myList.end()</code>。這樣寫的同時確保了 bucket 的尾巴也會判斷到。</li>
+<li><strong>參考解法：</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Searches the unordered_set for an element with keyVal as value and</span></span><br><span class="line"><span class="comment">// returns an iterator to it if found, otherwise it returns myList.end()</span></span><br><span class="line"><span class="function">iterator <span class="title">find</span><span class="params">( <span class="keyword">const</span> key_type &amp;keyVal )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> hash = bucket(keyVal);</span><br><span class="line">    <span class="keyword">auto</span> iter = myVec.myData.myFirst[hash * <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">while</span> (iter != myVec.myData.myFirst[hash * <span class="number">2</span> + <span class="number">1</span>] &amp;&amp; *iter != keyVal) ++iter;</span><br><span class="line">    <span class="keyword">return</span> iter == myList.<span class="built_in">end</span>() ? myList.<span class="built_in">end</span>() : *iter == keyVal ? iter : myList.<span class="built_in">end</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>void putIn(const value_type &amp;val)</code></p>
+<ul>
+<li><strong>函式功能：</strong> 將 <code>val</code> 放入 <code>myList</code>，同時位於 <code>myVec</code> 的 iterator 也需更新。</li>
+<li><strong>參考作法：</strong> 先找出 <code>val</code> 應該放入的 bucket，接著將 val 放入 bucket 的最前面，最後判斷 <code>*head</code> 是否等於 <code>myList.end()</code>，若相等代表這個 bucket 還是空的，此時值會被放在 <code>myList</code> 的尾端，將頭部跟尾端的 iterator 往前移恰好會指到該值。否則將頭部的 iterator 往前移即可。</li>
+<li><strong>參考解法：</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// put a new element in the unordered_set when myVec is large enough</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">putIn</span><span class="params">( <span class="keyword">const</span> value_type &amp;val )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> head = &amp;myVec.myData.myFirst[bucket(val) * <span class="number">2</span>];</span><br><span class="line">    myList.insert(*head, val);</span><br><span class="line">    <span class="keyword">if</span> ((*head)-- == myList.<span class="built_in">end</span>())--* ++head;</span><br><span class="line">    <span class="comment">//*head == myList.end() ? -- * head, --* ++head : --* head; // also be fine</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>void insert(const value_type &amp;val)</code></p>
+<ul>
+<li><strong>函式功能：</strong> 將 <code>val</code> 放入 unordered_set，若是大小超過需要擴張大小 ( 當元素個數等於 <code>maxidx</code> 時)。</li>
+<li><strong>參考作法：</strong> 先判斷 <code>val</code> 是否已經存在，若存在則直接回傳避免重複插入。接著判斷大小是否已經超過，若超過則需要更新 <code>maxidx</code> ( 初始值為 8，前兩次擴張都乘以 8，後面擴張則都乘以 2 ) 及 <code>mask</code> ( 永遠為 <code>maxidx - 1</code>)，接著將 <code>myList</code> 備份並清除 <code>myList</code>，接著擴張 <code>myVec</code> ( 呼叫 <code>assignGrow()</code> )，再遍歷剛剛備份的 <code>myList</code> 將原本存在的 key 放入新的 <code>List</code> ( 呼叫 <code>putIn()</code> )，最後將 <code>val</code> 放入即可。</li>
+<li><strong>參考解法：</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Inserts a new element in the unordered_set.</span></span><br><span class="line"><span class="comment">// The element is inserted only if it is not equivalent to any other element</span></span><br><span class="line"><span class="comment">// already in the container ( elements in an unordered_set have unique values ).</span></span><br><span class="line"><span class="comment">// This effectively increases the container size by one.</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">( <span class="keyword">const</span> value_type &amp;val )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">find</span>(val) != myList.<span class="built_in">end</span>()) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">size</span>() == maxidx &amp;&amp; (mask = (maxidx *= maxidx &lt; <span class="number">512</span> ? <span class="number">8</span> : <span class="number">2</span>) - <span class="number">1</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> tmp = myList;</span><br><span class="line">        myList.<span class="built_in">clear</span>();</span><br><span class="line">        myVec.assignGrow(maxidx * <span class="number">2</span>, myList.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; key : tmp) putIn(key);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    putIn(val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>void erase(const key_type &amp;keyVal)</code></p>
+<ul>
+<li><strong>函式功能：</strong> 將 <code>keyVal</code> 從 unordered_set 中刪除。</li>
+<li><strong>參考作法：</strong> 先判斷 <code>keyVal</code> 是否存在，接著取得 <code>keyVal</code> 位於的 node 的 iterator。判斷此 bucket 的大小是否為 1，若為 1 代表刪除後此 bucket 會為空，需要將 <code>myVec</code> 中的 iterator 更新 ( 將頭部跟尾端的 iterator 都設為 <code>myList.end()</code> 即可 )。否則判斷這個 node 是否在 bucket 的頭部或尾端，若在頭部則頭部的 itertor 需要往後移，若在尾端則尾端的 iterator 需要往前移。最後從 <code>myList</code> 中刪除即可。</li>
+<li><strong>參考解法：</strong><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Removes from the unordered_set a single element.</span></span><br><span class="line"><span class="comment">// This effectively reduces the container size by one.</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">erase</span><span class="params">( <span class="keyword">const</span> key_type &amp;keyVal )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> iter = <span class="built_in">find</span>(keyVal);</span><br><span class="line">    <span class="keyword">if</span> (iter == myList.<span class="built_in">end</span>()) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> head = &amp;myVec.myData.myFirst[bucket(keyVal) * <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">if</span> (*head == *(head + <span class="number">1</span>)) *head = *head++ = myList.<span class="built_in">end</span>();</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (*head == iter || *(head + <span class="number">1</span>) == iter) *head == iter ? ++ * head : -- * ++head;</span><br><span class="line"></span><br><span class="line">    myList.erase(iter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<p><a href="https://github.com/larrylai19/1091YzuCse/tree/master/DataStructures/HW1" target="_blank" rel="noopener"><i class="fa fa-download fa-2x"></i></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>作者： </strong>Larry Lai
+  </li>
+  <li class="post-copyright-link">
+    <strong>文章連結：</strong>
+    <a href="http://www.larrysprognotes.com/1091DS-HW1/" title="Homework 1 - Unordered_set">http://www.larrysprognotes.com/1091DS-HW1/</a>
+  </li>
+  <li>
+    <strong>發表時間：  </strong>2020-09-18 晚上 10 : 04 : 27
+  </li>
+  <li>
+    <strong>更新時間：  </strong>2020-12-07 晚上 11 : 06 : 11
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本站所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/LeetCode%20-%20121/" rel="prev" title="LeetCode - 121 解題紀錄 / September LeetCoding Challenge Day 18">
+      <i class="fa fa-chevron-left"></i> LeetCode - 121 解題紀錄 / September LeetCoding Challenge Day 18
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/LeetCode%20-%201291/" rel="next" title="LeetCode - 1291 解題紀錄 / September LeetCoding Challenge Day 19">
+      LeetCode - 1291 解題紀錄 / September LeetCoding Challenge Day 19 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#題目說明"><span class="nav-number">1.</span> <span class="nav-text">題目說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解題思路"><span class="nav-number">2.</span> <span class="nav-text">解題思路</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Larry Lai"
+      src="/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Larry Lai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="/module/" title="常用模板 - C++ → &#x2F;module&#x2F;"><i class="fa fa-bong fa-fw"></i>常用模板 - C++</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-bolt"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Lai - 轉載或引用本站文章時請附上作者及連結</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
