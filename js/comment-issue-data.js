@@ -1,8 +1,8 @@
 // 评论issues仓库 by.removeif https://removeif.github.io/
-var repoIssuesUrl = "https://api.github.com/repos/userName/userRepo/issues";
+var repoIssuesUrl = "https://api.github.com/repos/larrylai19/BlogComments/issues";
 // 对应仓库 clientId、clientSecret 关于这两个参数的安全问题，查看 https://removeif.github.io/2019/09/19/博客源码分享.html#1-热门推荐，最新评论：
-var clientId;// = "46a9f3481b46ea0129d8";
-var clientSecret;// = "79c7c9cb847e141757d7864453bcbf89f0655b24";
+var clientId = "2d3b013ac297d7f9e5ef";
+var clientSecret = "bceac9b2c9e57762dc957197c9979a336c7b0221";
 // var authorizationToken = 'Basic ' + btoa(clientId + ':' + clientSecret);
 // 写comment count值
 var reqCommentCountUrl;
@@ -11,7 +11,7 @@ var COMMENT_CACHE_KEY = "commentKey";
 var valine;
 
 // 管理员名称,评论时添加 [博主] 后缀
-var ADMIN_NAME = "removeif";
+var ADMIN_NAME = "larrylai19";
 
 function ajaxReqForGitHub(url, authorizationToken, call) {
     $.ajax({
@@ -180,8 +180,8 @@ function renderCommentData(COMMENT_ARR) {
             htmlContentWidget +=
                 "<div class='card-comment-item'>" + 
                     "<a href=\"" + item.userUrl + "\"target=\"_blank\">" + 
-                        "<img class='ava' src='" + item.userAvatar + "  onerror='this.onerror = null;this.src=\"https://cdn.jsdelivr.net/npm/gitalk@1/src/assets/icon/github.svg\";' '/>
-                    </a>" +
+                        "<img class='ava' src='" + item.userAvatar + "  onerror='this.onerror = null;this.src=\"https://cdn.jsdelivr.net/npm/gitalk@1/src/assets/icon/github.svg\";' '/>"
+                    + "</a>" +
                     "<div class='item-header-text'><a href='" + item.userUrl + "' target='_blank'>" + item.userName + "</a>&nbsp;发表于" + getDateDiff(new Date(item.date).getTime()) + "</div>" + "<div class=\"item-text\"><a href =\"" + item.url + '#comment-container\">' + contentStr + "</a></div>" +
                 "</div>";
         }
