@@ -10964,6 +10964,9 @@ a.article-nav-next span {
   word-wrap: break-word;
   white-space: normal;
 }
+.article {
+  padding-left: 0;
+}
 .navbar-main {
   box-shadow: none;
 }
