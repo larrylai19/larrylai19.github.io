@@ -10287,6 +10287,34 @@ body > .section {
 .size-small {
   font-size: 0.85rem !important;
 }
+.body_hot_comment .comment-content .card-comment-item,
+.media-left,
+.is-6-widescreen .card-image {
+  display: none;
+}
+.card {
+  background-color: unset;
+  box-shadow: unset;
+}
+.navbar,
+footer.footer {
+  background-color: unset;
+}
+.pagination,
+.post-navigation {
+  padding: 10px;
+}
+.pagination .pagination-link:not(.is-current),
+.pagination .pagination-previous,
+.pagination .pagination-next {
+  background-color: rgba(255,255,255,0);
+}
+.timeline .media:last-child:after {
+  background: unset;
+}
+.content .gt-container .gt-comment-admin .gt-comment-content {
+  border: 2px solid #deeafb;
+}
 .ml-0,
 .mx-0 {
   margin-left: 0 !important;
