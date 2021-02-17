@@ -10963,9 +10963,6 @@ a.article-nav-next span {
   word-wrap: break-word;
   white-space: normal;
 }
-.article {
-  padding-left: 0;
-}
 .navbar-main {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
