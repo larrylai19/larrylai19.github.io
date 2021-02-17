@@ -57,19 +57,19 @@ function getDateDiff(dateTimeStamp) {
     var hourC = diffValue / hour;
     var minC = diffValue / minute;
     if (monthC >= 1) {
-        result = " " + parseInt(monthC) + "月前";
+        result = " " + parseInt(monthC) + " 月前";
     }
     else if (weekC >= 1) {
-        result = " " + parseInt(weekC) + "周前";
+        result = " " + parseInt(weekC) + " 周前";
     }
     else if (dayC >= 1) {
-        result = " " + parseInt(dayC) + "天前";
+        result = " " + parseInt(dayC) + " 天前";
     }
     else if (hourC >= 1) {
-        result = " " + parseInt(hourC) + "小時前";
+        result = " " + parseInt(hourC) + " 小時前";
     }
     else if (minC >= 1) {
-        result = " " + parseInt(minC) + "分鐘前";
+        result = " " + parseInt(minC) + " 分鐘前";
     } else
         result = " 剛剛";
     return result;
