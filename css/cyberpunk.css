@@ -389,7 +389,7 @@ th:not([align]) {
 }
 html {
   background-color: #000;
-  font-size: 17px;
+  font-size: 18px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
@@ -10847,7 +10847,7 @@ article.article .article-meta {
 }
 article.article .content {
   word-wrap: break-word;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
 }
 article.article .content h1 {
   font-size: 1.75em;
@@ -10868,8 +10868,10 @@ article.article .content pre {
   font-size: 0.85em;
 }
 article.article .content code {
+  font-family: sans-serif, cursive, fantasy, monospace;
   padding: 0;
-  background: transparent;
+  background: #eee;
+  color: #ff5809;
   overflow-wrap: break-word;
 }
 article.article .content blockquote.pullquote {
@@ -12300,7 +12302,7 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: sans-serif, "PingFang SC", "Microsoft YaHei", 'fantasy', sans-serif;
 }
 body {
   background: url("/img/background.png");
