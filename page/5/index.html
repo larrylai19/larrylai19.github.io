@@ -1,67 +1,1128 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Larry&#039;s notes</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Larry&#039;s notes"><meta name="msapplication-TileImage" content="/img/L-favicon-32x32.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Larry&#039;s notes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Larry Lai"><meta property="og:url" content="https://www.larrysprognotes.com/"><meta property="og:site_name" content="Larry&#039;s notes"><meta property="og:locale" content="zh_TW"><meta property="og:image" content="https://www.larrysprognotes.com/avatar.jpg"><meta property="article:author" content="Larry Lai"><meta property="article:tag" content="C++"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/avatar.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.larrysprognotes.com"},"headline":"Larry's notes","image":["http://www.larrysprognotes.com/img/og_image.png"],"author":{"@type":"Person","name":"Larry Lai"},"description":""}</script><link rel="icon" href="/img/L-favicon-32x32.ico"><meta name="referrer" content="no-referrer-when-downgrade"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-38280830-2" async></script><script>window.dataLayer = window.dataLayer || [];
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-L.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/L-favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/L-favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/L-favicon-32x32.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.larrysprognotes.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Larry&#39;s notes">
+<meta property="og:url" content="http://www.larrysprognotes.com/page/5/index.html">
+<meta property="og:site_name" content="Larry&#39;s notes">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="Larry Lai">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.larrysprognotes.com/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>Larry's notes</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38280830-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+        gtag('config', 'UA-38280830-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Larry's notes</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
     
-        gtag('config', 'UA-38280830-2');</script><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><meta name="generator" content="Hexo 5.0.2"></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Larry&#039;s notes</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub" href="https://github.com/larrylai19"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜尋" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><!--!--><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-11-17  <a class="commentCountImg" href="/UVa-200/#comment-container"><span class="display-none-class">2e7f81233ee41a220d8164194845515a</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="2e7f81233ee41a220d8164194845515a">-</span>  </a><span class="level-item"><i class="far fa-clock"> </i>5 分鐘  <i class="fas fa-pencil-alt"> </i>0.7 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/UVa-200/">UVa - 200 解題紀錄</a></h1><div class="content"><p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=136">UVa - 200 - Rare Order</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給一些依據某種字典序排序的字串，求該字典序為何。</p></div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/UVa/">UVa</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/String/">String</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Vector/">Vector</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/UVa/">UVa</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Topological-Sort/">Topological Sort</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Graph/">Graph</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Recursive/">Recursive</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/List/">List</a></div><hr></div><div class="level is-mobile is-flex"><div class="level-start"><div class="level-item"><a class="article-more button is-small size-small" href="/UVa-200/">繼續閱讀</a></div></div><div class="level-start"><div class="level-item has-text-grey is-size-7"><time datetime="2021-02-16T14:22:47.822Z"><i class="far fa-calendar-check"> Last Modified: </i>2021-02-16</time></div></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-11-15  <a class="commentCountImg" href="/UVa-12442/#comment-container"><span class="display-none-class">00500c185bba040d57517491d5c1b477</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="00500c185bba040d57517491d5c1b477">-</span>  </a><span class="level-item"><i class="far fa-clock"> </i>4 分鐘  <i class="fas fa-pencil-alt"> </i>0.6 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/UVa-12442/">UVa - 12442 解題紀錄</a></h1><div class="content"><p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=3873">UVa - 12442 - Forwarding Emails</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一個小鎮，裡面的居民每個人都只會給另一個人寄信，求把信寄給哪位居民可以讓最多人看到這封信，若有相同者則取較小者。</p></div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/UVa/">UVa</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Vector/">Vector</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/UVa/">UVa</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Recursive/">Recursive</a></div><hr></div><div class="level is-mobile is-flex"><div class="level-start"><div class="level-item"><a class="article-more button is-small size-small" href="/UVa-12442/">繼續閱讀</a></div></div><div class="level-start"><div class="level-item has-text-grey is-size-7"><time datetime="2021-02-16T14:22:47.819Z"><i class="far fa-calendar-check"> Last Modified: </i>2021-02-16</time></div></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-11-15  <a class="commentCountImg" href="/UVa-11906/#comment-container"><span class="display-none-class">14202b4696c056319a7f91cb82bc2c9a</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="14202b4696c056319a7f91cb82bc2c9a">-</span>  </a><span class="level-item"><i class="far fa-clock"> </i>4 分鐘  <i class="fas fa-pencil-alt"> </i>0.6 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/UVa-11906/">UVa - 11906 解題紀錄</a></h1><div class="content"><p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=99999999&page=show_problem&category=0&problem=3057">UVa - 11906 - Knight in a War Grid</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一個騎士在一個 <code>R x C</code> 的棋盤上移動，從 <strong>(0, 0)</strong> 開始，每次可以從該點移動到 <code>(±M, ±N)</code> 及 <code>(±N, ±M)</code> 的點，有些點有水則不能跳。如果一個點能從偶數個點跳過來則標記為 <code>偶</code>，如果能從奇數個點跳過來則標記為 <code>奇</code>。求整個棋盤上 <code>奇</code> 跟 <code>偶</code> 的個數。</p></div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/UVa/">UVa</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Vector/">Vector</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/UVa/">UVa</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Graph/">Graph</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Recursive/">Recursive</a></div><hr></div><div class="level is-mobile is-flex"><div class="level-start"><div class="level-item"><a class="article-more button is-small size-small" href="/UVa-11906/">繼續閱讀</a></div></div><div class="level-start"><div class="level-item has-text-grey is-size-7"><time datetime="2021-02-16T14:22:47.814Z"><i class="far fa-calendar-check"> Last Modified: </i>2021-02-16</time></div></div></div></article></div><!--!--><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-11-14  <a class="commentCountImg" href="/UVa-168/#comment-container"><span class="display-none-class">b26e00b771146ec91847108bc1ade448</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="b26e00b771146ec91847108bc1ade448">-</span>  </a><span class="level-item"><i class="far fa-clock"> </i>4 分鐘  <i class="fas fa-pencil-alt"> </i>0.7 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/UVa-168/">UVa - 168 解題紀錄</a></h1><div class="content"><p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=104">UVa - 168 - Theseus and the Minotaur</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一個迷宮，一個勇者跟一個怪物，怪物會怕光，所以勇者拿著蠟燭在追逐怪物，勇者每走一定的步數後會插上蠟燭，並繼續走，所以怪物一定會被逼到無路可走，求勇者有插上蠟燭的地方及最後怪物被抓到的地方。在每個地點怪物都會優先往字典序小的地方走。</p></div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/UVa/">UVa</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/String/">String</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Vector/">Vector</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/UVa/">UVa</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Graph/">Graph</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Recursive/">Recursive</a></div><hr></div><div class="level is-mobile is-flex"><div class="level-start"><div class="level-item"><a class="article-more button is-small size-small" href="/UVa-168/">繼續閱讀</a></div></div><div class="level-start"><div class="level-item has-text-grey is-size-7"><time datetime="2021-02-16T14:22:47.821Z"><i class="far fa-calendar-check"> Last Modified: </i>2021-02-16</time></div></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-11-14  <a class="commentCountImg" href="/1091DS-HW6/#comment-container"><span class="display-none-class">80a473a9e5d5e34fdde1f7e68bb2a027</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="80a473a9e5d5e34fdde1f7e68bb2a027">-</span>  </a><span class="level-item"><i class="far fa-clock"> </i>1 分鐘  <i class="fas fa-pencil-alt"> </i>0.1 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/1091DS-HW6/">Homework 6 - UVa (Stack, Queue)</a></h1><div class="content"><p>課程名稱：資料結構 CS203 A<br>授課教師：林基成</div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/1091DataStructures-YzuCse/">1091DataStructures-YzuCse</a></div>  <hr></div><div class="level is-mobile is-flex"><div class="level-start"><div class="level-item"><a class="article-more button is-small size-small" href="/1091DS-HW6/">繼續閱讀</a></div></div><div class="level-start"><div class="level-item has-text-grey is-size-7"><time datetime="2021-02-24T16:14:03.294Z"><i class="far fa-calendar-check"> Last Modified: </i>2021-02-25</time></div></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-11-13  <a class="commentCountImg" href="/UVa-11034/#comment-container"><span class="display-none-class">6609df4a684d2fbcbaf1ee641b87eb31</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="6609df4a684d2fbcbaf1ee641b87eb31">-</span>  </a><span class="level-item"><i class="far fa-clock"> </i>3 分鐘  <i class="fas fa-pencil-alt"> </i>0.4 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/UVa-11034/">UVa - 11034 解題紀錄</a></h1><div class="content"><p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=1975">UVa - 11034 - Ferry Loading IV</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一艘可以載車子的船，兩岸分別有一些要到達對岸的車子，船有長度限制，在不超過船的長度限制的前提下，要放多少輛車都可以。在岸邊的車子有先後順序之分，在載完前面的車子前，不可以載後面的車子。</p></div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/UVa/">UVa</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/UVa/">UVa</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Queue/">Queue</a></div><hr></div><div class="level is-mobile is-flex"><div class="level-start"><div class="level-item"><a class="article-more button is-small size-small" href="/UVa-11034/">繼續閱讀</a></div></div><div class="level-start"><div class="level-item has-text-grey is-size-7"><time datetime="2021-02-16T14:22:47.804Z"><i class="far fa-calendar-check"> Last Modified: </i>2021-02-16</time></div></div></div></article></div><!--!--><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-11-13  <a class="commentCountImg" href="/UVa-10901/#comment-container"><span class="display-none-class">c6ea2a3d4daafd44db6a7bd6540fc786</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="c6ea2a3d4daafd44db6a7bd6540fc786">-</span>  </a><span class="level-item"><i class="far fa-clock"> </i>5 分鐘  <i class="fas fa-pencil-alt"> </i>0.7 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/UVa-10901/">UVa - 10901 解題紀錄</a></h1><div class="content"><p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=0&problem=1842">UVa - 10901 - Ferry Loading III</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一艘可以載車子的船，兩岸分別有一些要到達對岸的車子。船只有一艘，且一開始在左岸，當船目前所在的岸沒有車子，而對岸有車時，船必須直接過去載車，若是兩岸目前都沒有車，則船可以維持不動。而船上只要一有車就必須開到對岸，不可以等後面的車到達才開船。</p></div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/UVa/">UVa</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Vector/">Vector</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/UVa/">UVa</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Queue/">Queue</a></div><hr></div><div class="level is-mobile is-flex"><div class="level-start"><div class="level-item"><a class="article-more button is-small size-small" href="/UVa-10901/">繼續閱讀</a></div></div><div class="level-start"><div class="level-item has-text-grey is-size-7"><time datetime="2021-02-16T14:22:47.800Z"><i class="far fa-calendar-check"> Last Modified: </i>2021-02-16</time></div></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-11-09  <a class="commentCountImg" href="/UVa-10172/#comment-container"><span class="display-none-class">586a64efbb91bf21dd061fda20258bdf</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="586a64efbb91bf21dd061fda20258bdf">-</span>  </a><span class="level-item"><i class="far fa-clock"> </i>6 分鐘  <i class="fas fa-pencil-alt"> </i>0.8 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/UVa-10172/">UVa - 10172 解題紀錄</a></h1><div class="content"><p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=1113">UVa - 10172 - The Lonesome Cargo Distributor</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一台卡車及一個環形公路，公路上有許多站點，每個站點會有一個地方放要送到這個站點的貨物，還有一個要到其他站點的 Queue，所有站點的 Queue 都會有相同的容量限制，卡車的結構類似於 Stack，在移除上面的貨物前，無法移動下面的貨物。卡車每到一個站後都會執行相同的事情：</p></div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/UVa/">UVa</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/UVa/">UVa</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Stack/">Stack</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Queue/">Queue</a></div><hr></div><div class="level is-mobile is-flex"><div class="level-start"><div class="level-item"><a class="article-more button is-small size-small" href="/UVa-10172/">繼續閱讀</a></div></div><div class="level-start"><div class="level-item has-text-grey is-size-7"><time datetime="2021-02-16T14:22:47.794Z"><i class="far fa-calendar-check"> Last Modified: </i>2021-02-16</time></div></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-11-07  <a class="commentCountImg" href="/UVa-1062/#comment-container"><span class="display-none-class">48803d76511a44579c9ef06facb74411</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="48803d76511a44579c9ef06facb74411">-</span>  </a><span class="level-item"><i class="far fa-clock"> </i>3 分鐘  <i class="fas fa-pencil-alt"> </i>0.4 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/UVa-1062/">UVa - 1062 解題紀錄</a></h1><div class="content"><p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=3503">UVa - 1062 - Containers</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給一個字串，代表依序進到港口的貨物，後面的貨物進來後就無法再移動前面的貨物，在港口的貨物須從下而上按照字典序的大而小排序，求最少堆成幾堆可以滿足條件。</p></div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/UVa/">UVa</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Vector/">Vector</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/UVa/">UVa</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Stack/">Stack</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Dynamic-Programming/">Dynamic Programming</a></div><hr></div><div class="level is-mobile is-flex"><div class="level-start"><div class="level-item"><a class="article-more button is-small size-small" href="/UVa-1062/">繼續閱讀</a></div></div><div class="level-start"><div class="level-item has-text-grey is-size-7"><time datetime="2021-02-16T14:22:47.798Z"><i class="far fa-calendar-check"> Last Modified: </i>2021-02-16</time></div></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-11-07  <a class="commentCountImg" href="/UVa-732/#comment-container"><span class="display-none-class">c05f35cc088118cee48664be0985f5ff</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="c05f35cc088118cee48664be0985f5ff">-</span>  </a><span class="level-item"><i class="far fa-clock"> </i>2 分鐘  <i class="fas fa-pencil-alt"> </i>0.3 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/UVa-732/">UVa - 732 解題紀錄</a></h1><div class="content"><p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=673">UVa - 732 - Anagrams by Stack</a></p>
-<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給兩個字串，<code>str</code>、<code>target</code>，求 <code>str</code> 透過 Stack 的 <code>push()</code> 及 <code>pop()</code> 後能否轉換成 <code>target</code>，若可以則輸出所有能達成的操作順序。</p></div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/UVa/">UVa</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/UVa/">UVa</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Stack/">Stack</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/Recursive/">Recursive</a></div><hr></div><div class="level is-mobile is-flex"><div class="level-start"><div class="level-item"><a class="article-more button is-small size-small" href="/UVa-732/">繼續閱讀</a></div></div><div class="level-start"><div class="level-item has-text-grey is-size-7"><time datetime="2021-02-16T14:22:47.828Z"><i class="far fa-calendar-check"> Last Modified: </i>2021-02-16</time></div></div></div></article></div><!--!--><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/4/">上一頁</a></div><div class="pagination-next"><a href="/page/6/">下一頁</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/4/">4</a></li><li><a class="pagination-link is-current" href="/page/5/">5</a></li><li><a class="pagination-link" href="/page/6/">6</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/23/">23</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/avatar.jpg" alt="Larry Lai"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Larry Lai</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Taiwan</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">229</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分類</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">標籤</p><a href="/tags"><p class="title">45</p></a></div></div></nav><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/larrylai19"><i class="fab fa-github"></i></a></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分類</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/1091DataStructures-YzuCse/"><span class="level-start"><span class="level-item">1091DataStructures-YzuCse</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/1091LinearAlgebra-YzuCse/"><span class="level-start"><span class="level-item">1091LinearAlgebra-YzuCse</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/1092IntroductionToAlgorithms-YzuCse/"><span class="level-start"><span class="level-item">1092IntroductionToAlgorithms-YzuCse</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Bitwise/"><span class="level-start"><span class="level-item">Bitwise</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/C/"><span class="level-start"><span class="level-item">C++</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">148</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/UVa/"><span class="level-start"><span class="level-item">UVa</span></span><span class="level-end"><span class="level-item tag">56</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">彙整</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">32</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">標籤</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag is-grey-lightest">209</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode/"><span class="tag">LeetCode</span><span class="tag is-grey-lightest">144</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode-Medium/"><span class="tag">LeetCode - Medium</span><span class="tag is-grey-lightest">83</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vector/"><span class="tag">Vector</span><span class="tag is-grey-lightest">78</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">57</span></a></div><div class="control"><a class="tags has-addons" href="/tags/UVa/"><span class="tag">UVa</span><span class="tag is-grey-lightest">56</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode-Easy/"><span class="tag">LeetCode - Easy</span><span class="tag is-grey-lightest">55</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Recursive/"><span class="tag">Recursive</span><span class="tag is-grey-lightest">41</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode-30-August/"><span class="tag">LeetCode 30 August</span><span class="tag is-grey-lightest">31</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode-30-September/"><span class="tag">LeetCode 30 September</span><span class="tag is-grey-lightest">30</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Graph/"><span class="tag">Graph</span><span class="tag is-grey-lightest">26</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Unordered-map/"><span class="tag">Unordered_map</span><span class="tag is-grey-lightest">18</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Unordered-set/"><span class="tag">Unordered_set</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/List/"><span class="tag">List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode-Hard/"><span class="tag">LeetCode - Hard</span><span class="tag is-grey-lightest">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Priority-queue/"><span class="tag">Priority_queue</span><span class="tag is-grey-lightest">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Queue/"><span class="tag">Queue</span><span class="tag is-grey-lightest">9</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget"><div class="card-content"><h3 class="menu-label">Latest Comment</h3><span class="body_hot_comment">Loading...Wait a Minute!</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-24T17:04:27.000Z">2021-02-25</time></p><p class="title"><a href="/1092ALGO-HW1/">1092 ALGO Homework 1 - UVa (Dynamic programming)</a></p><p class="categories"><a href="/categories/1092IntroductionToAlgorithms-YzuCse/">1092IntroductionToAlgorithms-YzuCse</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-24T15:04:27.000Z">2021-02-24</time></p><p class="title"><a href="/UVa-10943/">UVa - 10943 解題紀錄</a></p><p class="categories"><a href="/categories/UVa/">UVa</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-24T14:04:27.000Z">2021-02-24</time></p><p class="title"><a href="/UVa-10721/">UVa - 10721 解題紀錄</a></p><p class="categories"><a href="/categories/UVa/">UVa</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-24T13:04:27.000Z">2021-02-24</time></p><p class="title"><a href="/UVa-10337/">UVa - 10337 解題紀錄</a></p><p class="categories"><a href="/categories/UVa/">UVa</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-02T09:04:27.000Z">2021-01-02</time></p><p class="title"><a href="/LeetCode-35/">LeetCode - 35 解題紀錄</a></p><p class="categories"><a href="/categories/LeetCode/">LeetCode</a></p></div></article></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><p class="size-small"><span>&copy; 2021 Larry Lai </span>- 轉載或引用本站文章時請附上作者及連結<br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="GitHub" href="https://github.com/larrylai19"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script><script>moment.locale("zh-TW");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到頁首" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.8/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('2d3b013ac297d7f9e5ef','bceac9b2c9e57762dc957197c9979a336c7b0221','larrylai19','BlogComments',false);})</script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="請輸入關鍵字..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/content.json"}, {"hint":"請輸入關鍵字...","untitled":"(無標題)","posts":"文章","pages":"頁面","categories":"分類","tags":"標籤"});
-        });</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
-            elements: "a",//代表点击链接就更新
-            selectors: [  //代表要更新的节点
-                ".section",
-                "title"
-            ],
-            cache: true,
-            cacheBust:false
-        })
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
-        function loadBusuanzi(){
-        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
-        }
+  <a href="https://github.com/larrylai19" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
-        // 开始 PJAX 执行的函数
-        document.addEventListener('pjax:send', function () {
-        });
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+	  
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/UVa-200/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UVa-200/" class="post-title-link" itemprop="url">UVa - 200 解題紀錄</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-17 10:04:27" itemprop="dateCreated datePublished" datetime="2020-11-17T10:04:27+08:00">2020-11-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UVa/" itemprop="url" rel="index"><span itemprop="name">UVa</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=136">UVa - 200 - Rare Order</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給一些依據某種字典序排序的字串，求該字典序為何。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/UVa-200/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
-        document.addEventListener('pjax:complete', function () {
-            $(".section").css({opacity:1});
-            if(true){
-                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('2d3b013ac297d7f9e5ef','bceac9b2c9e57762dc957197c9979a336c7b0221','larrylai19','BlogComments',false);});
-            }
-            if(false){
-                loadMathJax();
-            }
-            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
-            loadBackTop();
-            loadBusuanzi();
-            if(typeof loadBanner == 'function'){
-                loadBanner();
-            }
-        });</script></body></html>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+	  
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/UVa-12442/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UVa-12442/" class="post-title-link" itemprop="url">UVa - 12442 解題紀錄</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-15 19:04:27" itemprop="dateCreated datePublished" datetime="2020-11-15T19:04:27+08:00">2020-11-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UVa/" itemprop="url" rel="index"><span itemprop="name">UVa</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=3873">UVa - 12442 - Forwarding Emails</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一個小鎮，裡面的居民每個人都只會給另一個人寄信，求把信寄給哪位居民可以讓最多人看到這封信，若有相同者則取較小者。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/UVa-12442/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+	  
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/UVa-11906/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UVa-11906/" class="post-title-link" itemprop="url">UVa - 11906 解題紀錄</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-15 01:04:27" itemprop="dateCreated datePublished" datetime="2020-11-15T01:04:27+08:00">2020-11-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UVa/" itemprop="url" rel="index"><span itemprop="name">UVa</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=99999999&page=show_problem&category=0&problem=3057">UVa - 11906 - Knight in a War Grid</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一個騎士在一個 <code>R x C</code> 的棋盤上移動，從 <strong>(0, 0)</strong> 開始，每次可以從該點移動到 <code>(±M, ±N)</code> 及 <code>(±N, ±M)</code> 的點，有些點有水則不能跳。如果一個點能從偶數個點跳過來則標記為 <code>偶</code>，如果能從奇數個點跳過來則標記為 <code>奇</code>。求整個棋盤上 <code>奇</code> 跟 <code>偶</code> 的個數。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/UVa-11906/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+	  
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/UVa-168/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UVa-168/" class="post-title-link" itemprop="url">UVa - 168 解題紀錄</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-14 18:04:27" itemprop="dateCreated datePublished" datetime="2020-11-14T18:04:27+08:00">2020-11-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UVa/" itemprop="url" rel="index"><span itemprop="name">UVa</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=104">UVa - 168 - Theseus and the Minotaur</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一個迷宮，一個勇者跟一個怪物，怪物會怕光，所以勇者拿著蠟燭在追逐怪物，勇者每走一定的步數後會插上蠟燭，並繼續走，所以怪物一定會被逼到無路可走，求勇者有插上蠟燭的地方及最後怪物被抓到的地方。在每個地點怪物都會優先往字典序小的地方走。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/UVa-168/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+	  
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/1091DS-HW6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/1091DS-HW6/" class="post-title-link" itemprop="url">Homework 6 - UVa (Stack, Queue)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-14 00:04:27" itemprop="dateCreated datePublished" datetime="2020-11-14T00:04:27+08:00">2020-11-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1091DataStructures-YzuCse/" itemprop="url" rel="index"><span itemprop="name">1091DataStructures-YzuCse</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>課程名稱：資料結構 CS203 A<br>授課教師：林基成
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/1091DS-HW6/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+	  
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/UVa-11034/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UVa-11034/" class="post-title-link" itemprop="url">UVa - 11034 解題紀錄</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-13 23:04:27" itemprop="dateCreated datePublished" datetime="2020-11-13T23:04:27+08:00">2020-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UVa/" itemprop="url" rel="index"><span itemprop="name">UVa</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=1975">UVa - 11034 - Ferry Loading IV</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一艘可以載車子的船，兩岸分別有一些要到達對岸的車子，船有長度限制，在不超過船的長度限制的前提下，要放多少輛車都可以。在岸邊的車子有先後順序之分，在載完前面的車子前，不可以載後面的車子。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/UVa-11034/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+	  
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/UVa-10901/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UVa-10901/" class="post-title-link" itemprop="url">UVa - 10901 解題紀錄</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-13 20:04:27" itemprop="dateCreated datePublished" datetime="2020-11-13T20:04:27+08:00">2020-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UVa/" itemprop="url" rel="index"><span itemprop="name">UVa</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=0&problem=1842">UVa - 10901 - Ferry Loading III</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一艘可以載車子的船，兩岸分別有一些要到達對岸的車子。船只有一艘，且一開始在左岸，當船目前所在的岸沒有車子，而對岸有車時，船必須直接過去載車，若是兩岸目前都沒有車，則船可以維持不動。而船上只要一有車就必須開到對岸，不可以等後面的車到達才開船。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/UVa-10901/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+	  
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/UVa-10172/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UVa-10172/" class="post-title-link" itemprop="url">UVa - 10172 解題紀錄</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-09 23:04:27" itemprop="dateCreated datePublished" datetime="2020-11-09T23:04:27+08:00">2020-11-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UVa/" itemprop="url" rel="index"><span itemprop="name">UVa</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=1113">UVa - 10172 - The Lonesome Cargo Distributor</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>有一台卡車及一個環形公路，公路上有許多站點，每個站點會有一個地方放要送到這個站點的貨物，還有一個要到其他站點的 Queue，所有站點的 Queue 都會有相同的容量限制，卡車的結構類似於 Stack，在移除上面的貨物前，無法移動下面的貨物。卡車每到一個站後都會執行相同的事情：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/UVa-10172/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+	  
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/UVa-1062/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UVa-1062/" class="post-title-link" itemprop="url">UVa - 1062 解題紀錄</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-07 01:04:27" itemprop="dateCreated datePublished" datetime="2020-11-07T01:04:27+08:00">2020-11-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UVa/" itemprop="url" rel="index"><span itemprop="name">UVa</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=3503">UVa - 1062 - Containers</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給一個字串，代表依序進到港口的貨物，後面的貨物進來後就無法再移動前面的貨物，在港口的貨物須從下而上按照字典序的大而小排序，求最少堆成幾堆可以滿足條件。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/UVa-1062/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+	  
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://www.larrysprognotes.com/UVa-732/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="Larry Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Larry's notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UVa-732/" class="post-title-link" itemprop="url">UVa - 732 解題紀錄</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-07 00:04:27" itemprop="dateCreated datePublished" datetime="2020-11-07T00:04:27+08:00">2020-11-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UVa/" itemprop="url" rel="index"><span itemprop="name">UVa</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>題目： <a target="_blank" rel="noopener" href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&category=0&problem=673">UVa - 732 - Anagrams by Stack</a></p>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給兩個字串，<code>str</code>、<code>target</code>，求 <code>str</code> 透過 Stack 的 <code>push()</code> 及 <code>pop()</code> 後能否轉換成 <code>target</code>，若可以則輸出所有能達成的操作順序。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/UVa-732/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Larry Lai"
+      src="/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Larry Lai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">229</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="/module/" title="常用模板 - C++ → &#x2F;module&#x2F;"><i class="fa fa-bong fa-fw"></i>常用模板 - C++</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-bolt"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Larry Lai - 轉載或引用本站文章時請附上作者及連結</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+</body>
+</html>
