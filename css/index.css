@@ -1664,7 +1664,7 @@ blockquote footer cite:before {
 }
 #article-container pre,
 #article-container code {
-  font-size: 1em;
+  font-size: 0.8em;
   font-family: consolas, Menlo, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif !important;
 }
 #article-container code {
@@ -1695,7 +1695,7 @@ blockquote footer cite:before {
 #article-container figure.highlight figcaption,
 #article-container figure.highlight .caption {
   padding: 0.3rem 0 0.1rem 0.7rem;
-  font-size: 1em;
+  font-size: 0.8em;
   line-height: 1em;
 }
 #article-container figure.highlight figcaption a,
@@ -1727,7 +1727,7 @@ blockquote footer cite:before {
   height: 2.15em;
   background: #e6ebf1;
   color: #90a4ae;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 #article-container .highlight-tools.closed + table {
   display: none;
