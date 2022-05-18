@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Larry's notes</title><meta name="keywords" content="C++"><meta name="author" content="Larry Lai"><meta name="copyright" content="Larry Lai"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Larry&#39;s notes">
+<meta property="og:url" content="http://www.larrysprognotes.com/page/29/index.html">
+<meta property="og:site_name" content="Larry&#39;s notes">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://www.larrysprognotes.com/avatar.jpg">
+<meta property="article:author" content="Larry Lai">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.larrysprognotes.com/avatar.jpg"><link rel="shortcut icon" href="/img/L-favicon-32x32.ico"><link rel="canonical" href="http://www.larrysprognotes.com/page/29/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-38280830-2"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-38280830-2');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-05-18 18:03:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">305</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">65</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分類</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Larry's notes</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/LeetCode-543/" title="LeetCode - 543 解題紀錄">LeetCode - 543 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-07-09T15:04:27.000Z" title="發表於 2020-07-09 23:04:27">2020-07-09</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">題目： LeetCode - 543. Diameter of Binary Tree
+題目說明給一個 Tree，找出它的最長路徑。
+
+
+解題思路核心想法為，最長路徑有沒有通過 root？
+
+若有：最長路徑為 左邊 node 的最深深度 加上 右邊 node 的最深深度。
+
+若沒有：最長路徑為 左邊 node 的最長路徑 或是 右邊 node 的最長路徑。
+
+
+確定了上面想法後再利用遞迴的觀念找出答案即可。Tree 的最深深度的算法可參考：LeetCode - 104 解題紀錄
+參考解法123456789101112131415161718192021222324class Solution &#123;public:        int maxDepth(TreeNode* root)    &#123;        if(!root)            return 0;        return max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + 1;    &#125;        int diamete ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/LeetCode-104/" title="LeetCode - 104 解題紀錄">LeetCode - 104 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-07-09T14:04:27.000Z" title="發表於 2020-07-09 22:04:27">2020-07-09</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">題目： LeetCode - 104. Maximum Depth of Binary Tree
+題目說明給一個 Tree，找出它的最深深度。
+
+
+解題思路利用遞迴的概念，每個節點的最深深度為 左邊node 的最深深度 + 1 或是 右邊 node 的最深深度 + 1，終止條件為 root == nullptr 的時候。
+參考解法12345678class Solution &#123;public:    int maxDepth(TreeNode* root) &#123;        if(!root)            return 0;        return max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + 1;    &#125;&#125;;
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/LeetCode-155/" title="LeetCode - 155 解題紀錄">LeetCode - 155 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-07-09T13:04:27.000Z" title="發表於 2020-07-09 21:04:27">2020-07-09</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">題目： LeetCode - 155. Min Stack
+題目說明設計一個 Stack，並完成部分功能。
+
+
+解題思路可以直接使用 STL 的容器，所以只須明白 Stack 的運作模式即可。
+
+解法一  Vector：速度較慢。( 因為插入與刪除元素的代價較高 )
+
+解法二  Stack：速度較快，這邊使用 stack&lt;pair&lt;int, int&gt;&gt; 來增加取得最小值的效率。
+
+
+參考解法解法一：
+1234567891011121314151617181920212223242526class MinStack &#123;public:    /** initialize your data structure here. */    vector&lt;int&gt; minstack;        MinStack() &#123;        ios_base::sync_with_stdio(false);        cin.tie(0);    &#125;        void push(int x) &#123;        min ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/LeetCode-844/" title="LeetCode - 844 解題紀錄">LeetCode - 844 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-07-09T06:04:27.000Z" title="發表於 2020-07-09 14:04:27">2020-07-09</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">題目： LeetCode - 844. Backspace String Compare
+題目說明給兩個字串，模擬字串的內容操作鍵盤，字串內的 # 代表 BackSpace，判斷模擬完後輸出的字串是否相同。
+
+
+解題思路
+解法一：定義新的兩個 String 並分別遍歷原本的字串，若不是 # 則 push_back() 到新字串，否則就 pop_back()。( 須注意字串的Size，若是 0 就不能在 pop_back() )
+
+解法二：使用雙指針，將模擬操作後的字串放入原本的字串。( 一樣要注意 Size 的問題 )
+
+
+參考解法解法一：
+1234567891011121314151617181920class Solution &#123;public:    bool backspaceCompare(string S, string T) &#123;        string s, t;                for(auto&amp; i : S)            if( i != &#x27;#&#x27;)                s.push_b ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/LeetCode-876/" title="LeetCode - 876 解題紀錄">LeetCode - 876 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-07-08T13:04:27.000Z" title="發表於 2020-07-08 21:04:27">2020-07-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">題目： LeetCode - 876. Middle of the Linked List
+題目說明給一個 Linked List，找到 List 中間的那個 node。
+
+
+解題思路
+解法一：先遍歷一遍，得到整個 List 的長度，然後在用一個 node 走到長度的一半即可。
+
+解法二：使用 Floyd Cycle Detection Algorithm 的概念，當 hare 走到結尾時，tortoise 剛好會走到一半。
+
+
+參考解法解法一：
+12345678910class Solution &#123;public:    ListNode* middleNode(ListNode* head) &#123;        int length = 0;        auto ans = head;        for(auto it = head; it != nullptr; it = it-&gt;next, ++length);        for(int i = 0; i &lt; length / 2; ++i, ans = ans-&gt;next);    ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/LeetCode-49/" title="LeetCode - 49 解題紀錄">LeetCode - 49 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-07-08T10:04:27.000Z" title="發表於 2020-07-08 18:04:27">2020-07-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">題目： LeetCode - 49. Group Anagrams
+題目說明給一個字串的陣列，將所有組成字串的字母相同的放在一起。
+
+
+解題思路
+想法：可使用 sort() 來排序 String，若是兩個組成字串的字母一樣，那排序過後會長的一樣。
+
+解法一：使用 vector&lt;pair&lt;string, int&gt;&gt; 存放資料 ( 後面稱作 temp )，first 放排序過的字串，second 放該字串在 strs 裡面的 index。之後對 temp 進行排序 ( 預設會排序 first )。最後將排序過後相同的字串存入 res 即可。
+
+解法二：使用 unordered_map&lt;string, vector&lt;string&gt;&gt; 存放資料，key 存放排序過後的字串，value 存放未排序的字串，最後將 value 存入 res 即可。
+
+
+參考解法解法一：
+123456789101112131415161718192021222324252627282930313233343536class Solution &#123;public:  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/LeetCode-122/" title="LeetCode - 122 解題紀錄">LeetCode - 122 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-07-08T07:04:27.000Z" title="發表於 2020-07-08 15:04:27">2020-07-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">題目： LeetCode - 122. Best Time to Buy and Sell Stock II
+題目說明給一個陣列代表股票的價格，賣的時間不可早於買的時間，求最大收益。
+
+
+解題思路只需判斷相隔兩天即可，若第二天的價格大於第一天則於第一天購買並於第二天賣出。
+參考解法12345678910class Solution &#123;public:    int maxProfit(vector&lt;int&gt;&amp; prices) &#123;        int n = prices.size(), profit = 0;        for(int i = 0; i + 1 &lt; n; ++i)            if(prices[i] &lt; prices[i + 1])                profit += prices[i + 1] - prices[i];        return profit;    &#125;&#125;;
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/encrypt/" title="透過 XOR 進行簡易加密">透過 XOR 進行簡易加密</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-07-07T16:04:27.000Z" title="發表於 2020-07-08 00:04:27">2020-07-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C/">C++</a></span></div><div class="content">紀錄使用 XOR 進行簡易加密，目前進行 2 次 XOR 運算 ( 太多次中文字會出錯 )
+作法
+加密：隨機產生兩個數字，並將內容對這兩個數字做 XOR，最後這兩個數字對 9 做一次 XOR 並儲存在第一行
+解密：先讀取第一行並對 9 做一次 XOR 可以得到兩個加密的數字，再將內容對這兩個數字做 XOR 並儲存即可
+
+用法將要加密或解密的文字放在 data.txt 裡
+
+加密：執行完成後會產生 encrypted.txt，裡面即是加密後的內容
+解密：執行完成後會產生 decrypted.txt，裡面即是加密後的內容
+
+已知 Bug
+中文字有時會出錯 ( 變成其他文字或符號 )
+符號有時會出錯 ( 會不見 )
+
+努力方向
+解決掉上面的 Bug
+讓程式更有效率 ( 目前太多迴圈 )
+
+code2020-07-08 第一版
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/LeetCode-283/" title="LeetCode - 283 解題紀錄">LeetCode - 283 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-07-07T14:04:27.000Z" title="發表於 2020-07-07 22:04:27">2020-07-07</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">題目： LeetCode - 283. Move Zeroes
+題目說明給一個陣列，將陣列中的 0 全部都往最右邊移，而其他數字的順序不變。
+
+
+解題思路使用一個迴圈，將陣列中不是 0 的從最前面開始放，最後再把 0 補上即可。
+參考解法1234567891011class Solution &#123;public:    void moveZeroes(vector&lt;int&gt;&amp; nums) &#123;        int j = 0, n = nums.size();        for(int i = 0; i &lt; n; ++i)            if(nums[i] != 0)                nums[j++] = nums[i];        while(j &lt; n)            nums[j++] = 0;    &#125;&#125;;
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/LeetCode-53/" title="LeetCode - 53 解題紀錄">LeetCode - 53 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-07-07T13:04:27.000Z" title="發表於 2020-07-07 21:04:27">2020-07-07</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">題目： LeetCode - 53. Maximum Subarray
+題目說明給一個陣列，找到具有最大總和的連續子陣列 ( 至少包含一個數字 )，並回傳其總和。
+
+
+解題思路使用動態規劃的觀念，最大值為 mx + nums[i] 及 nums[i] 兩者取較大者，並隨時更新結果即可。
+參考解法12345678910111213class Solution &#123;public:    int maxSubArray(vector&lt;int&gt;&amp; nums)    &#123;        int mx = nums[0], res = mx, n = nums.size();        for(int i = 1; i &lt; n; ++i)        &#123;            mx = max(mx + nums[i], nums[i]);            res = max(res, mx);        &#125;        return res;    &#125;&#125;;
+
+
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/28/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/30/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Larry Lai</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">305</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">65</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分類</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/larrylai19"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-bolt"></i><span>最新評論</span></div><div class="aside-list"><span>正在載入中...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分類</span>
+            <a class="card-more-btn" href="/categories/" title="檢視更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1091DataStructures-YzuCse/"><span class="card-category-list-name">1091DataStructures-YzuCse</span><span class="card-category-list-count">13</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1091LinearAlgebra-YzuCse/"><span class="card-category-list-name">1091LinearAlgebra-YzuCse</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1092IntroductionToAlgorithms-YzuCse/"><span class="card-category-list-name">1092IntroductionToAlgorithms-YzuCse</span><span class="card-category-list-count">12</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Bitwise/"><span class="card-category-list-name">Bitwise</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LeetCode/"><span class="card-category-list-name">LeetCode</span><span class="card-category-list-count">151</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/UVa/"><span class="card-category-list-name">UVa</span><span class="card-category-list-count">105</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>標籤</span></div><div class="card-tag-cloud"><a href="/tags/0-1-Knapsack/" style="font-size: 1.15em; color: #999b9e">0-1 Knapsack</a> <a href="/tags/Articulation-Points/" style="font-size: 1.1em; color: #999">Articulation Points</a> <a href="/tags/BFS/" style="font-size: 1.15em; color: #999b9e">BFS</a> <a href="/tags/Back-Tracking/" style="font-size: 1.1em; color: #999">Back Tracking</a> <a href="/tags/Bellman-Ford/" style="font-size: 1.15em; color: #999b9e">Bellman Ford</a> <a href="/tags/Bitwise/" style="font-size: 1.2em; color: #999da3">Bitwise</a> <a href="/tags/C/" style="font-size: 1.5em; color: #99a9bf">C++</a> <a href="/tags/CPE-2020-06-09/" style="font-size: 1.13em; color: #999a9b">CPE - 2020/06/09</a> <a href="/tags/CPE-2020-10-20/" style="font-size: 1.23em; color: #999ea5">CPE - 2020/10/20</a> <a href="/tags/CPE-2020-12-22/" style="font-size: 1.23em; color: #999ea5">CPE - 2020/12/22</a> <a href="/tags/Coin-Change/" style="font-size: 1.15em; color: #999b9e">Coin Change</a> <a href="/tags/Computational-Geometry/" style="font-size: 1.15em; color: #999b9e">Computational Geometry</a> <a href="/tags/Convex-Hull/" style="font-size: 1.15em; color: #999b9e">Convex Hull</a> <a href="/tags/DFS/" style="font-size: 1.1em; color: #999">DFS</a> <a href="/tags/Dijkstra/" style="font-size: 1.15em; color: #999b9e">Dijkstra</a> <a href="/tags/Dinic/" style="font-size: 1.23em; color: #999ea5">Dinic</a> <a href="/tags/Divide-and-Conquer/" style="font-size: 1.13em; color: #999a9b">Divide and Conquer</a> <a href="/tags/Dynamic-Programming/" style="font-size: 1.4em; color: #99a5b6">Dynamic Programming</a> <a href="/tags/Edmonds-Karp/" style="font-size: 1.2em; color: #999da3">Edmonds-Karp</a> <a href="/tags/Floyd-Cycle-Detection-Algorithm/" style="font-size: 1.13em; color: #999a9b">Floyd Cycle Detection Algorithm</a> <a href="/tags/Floyd-Warshall/" style="font-size: 1.18em; color: #999ca0">Floyd-Warshall</a> <a href="/tags/Graham-Scan/" style="font-size: 1.15em; color: #999b9e">Graham Scan</a> <a href="/tags/Graph/" style="font-size: 1.32em; color: #99a2ae">Graph</a> <a href="/tags/Index-Sort/" style="font-size: 1.1em; color: #999">Index Sort</a> <a href="/tags/Kadane/" style="font-size: 1.15em; color: #999b9e">Kadane</a> <a href="/tags/Kruskcal/" style="font-size: 1.15em; color: #999b9e">Kruskcal</a> <a href="/tags/LDS/" style="font-size: 1.15em; color: #999b9e">LDS</a> <a href="/tags/LIS/" style="font-size: 1.18em; color: #999ca0">LIS</a> <a href="/tags/LeetCode/" style="font-size: 1.48em; color: #99a8bd">LeetCode</a> <a href="/tags/LeetCode-Easy/" style="font-size: 1.43em; color: #99a6b8">LeetCode - Easy</a> <a href="/tags/LeetCode-Hard/" style="font-size: 1.28em; color: #99a0aa">LeetCode - Hard</a> <a href="/tags/LeetCode-Medium/" style="font-size: 1.45em; color: #99a7ba">LeetCode - Medium</a> <a href="/tags/LeetCode-30-August/" style="font-size: 1.38em; color: #99a4b3">LeetCode 30 August</a> <a href="/tags/LeetCode-30-September/" style="font-size: 1.35em; color: #99a3b1">LeetCode 30 September</a> <a href="/tags/List/" style="font-size: 1.3em; color: #99a1ac">List</a> <a href="/tags/MCMF/" style="font-size: 1.15em; color: #999b9e">MCMF</a> <a href="/tags/Map/" style="font-size: 1.23em; color: #999ea5">Map</a> <a href="/tags/Maximum-Flow/" style="font-size: 1.25em; color: #999fa7">Maximum Flow</a> <a href="/tags/Minimum-Spanning-Tree/" style="font-size: 1.15em; color: #999b9e">Minimum Spanning Tree</a> <a href="/tags/Multiset/" style="font-size: 1.13em; color: #999a9b">Multiset</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>文章</span><a class="card-more-btn" href="/archives/" title="檢視更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">十二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">16</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>網站資訊</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章數目 :</div><div class="item-count">305</div></div><div class="webinfo-item"><div class="item-name">已運行時間 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-07-01T05:51:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站總字數 :</div><div class="item-count">105.3k</div></div><div class="webinfo-item"><div class="item-name">最後更新時間 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-05-18T10:03:54.558Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Larry Lai</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜尋</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[圖片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[連結]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代碼]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const findTrueUrl = (array) => {
+    let url = ''
+    Promise.all(array.map(item =>
+      fetch(item.url).then(resp => resp.json()).then(data => {
+        if (data.user.login === 'utterances-bot') {
+          url = data.body.match(/https?\:\/\/[^\" ]+/ig).slice(-1)
+          return url[0]
+        } else {
+          url = data.body.match(/https?\:\/\/[^\" ]+/i)
+          return url[0]
+        }
+      })
+    )).then(res => {
+        array = array.map((i,index)=> {
+          return {
+            ...i,
+            url: res[index]
+          }
+        })
+
+        saveToLocal.set('github-newest-comments', JSON.stringify(array), 10/(60*24))
+        generateHtml(array)
+    });
+  }
+
+  const getComment = () => {
+    fetch('https://api.github.com/repos/larrylai19/BlogComments/issues/comments?sort=updated&direction=desc&per_page=6&page=1',{
+      "headers": {
+        Accept: 'application/vnd.github.v3.html+json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        const githubArray = data.map(item => {
+          return {
+            'avatar': item.user.avatar_url,
+            'content': changeContent(item.body_html),
+            'nick': item.user.login,
+            'url': item.issue_url,
+            'date': item.updated_at,
+            'githubUrl': item.html_url
+          }
+        })
+        findTrueUrl(githubArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "無法獲取評論，請確認相關配置是否正確"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          //- result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+          result += `<a href='${array[i].url}#post-comment' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        //- 直接到文章評論處
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}#post-comment'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+        
+        //- result += `<div class='content'>
+        //- <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+        //- <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        //- </div></div>`
+      }
+    } else {
+      result += '沒有評論'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('github-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>

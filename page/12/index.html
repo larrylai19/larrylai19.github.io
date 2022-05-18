@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Larry's notes</title><meta name="keywords" content="C++"><meta name="author" content="Larry Lai"><meta name="copyright" content="Larry Lai"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Larry&#39;s notes">
+<meta property="og:url" content="http://www.larrysprognotes.com/page/12/index.html">
+<meta property="og:site_name" content="Larry&#39;s notes">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://www.larrysprognotes.com/avatar.jpg">
+<meta property="article:author" content="Larry Lai">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.larrysprognotes.com/avatar.jpg"><link rel="shortcut icon" href="/img/L-favicon-32x32.ico"><link rel="canonical" href="http://www.larrysprognotes.com/page/12/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-38280830-2"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-38280830-2');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-05-18 18:03:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">305</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">65</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分類</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Larry's notes</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/UVa-796/" title="UVa - 796 解題紀錄">UVa - 796 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-11-22T18:04:27.000Z" title="發表於 2020-11-23 02:04:27">2020-11-23</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UVa/">UVa</a></span></div><div class="content">題目： UVa - 796 - Critical Links
+題目說明給一個無向圖，求 Bridge 的數量 及 Bridge。
+
+
+Bridge 的定義：
+
+
+對於一個連通的無向圖來說，若拿掉某一邊會導致原本連通的圖變得不連通，則該邊為 Bridge。
+對於任意邊 (u, v)，若 v 及 v 的 descendant 不存在一條連接到 u 的 ancestor 的 Back edge，則 (u, v) 為 Bridge。
+
+
+Input： 每組測資的第一行為一整數 N，表示圖有幾個點 (0 ~ N - 1)，接下來 N 行為每個點的連接情況，第一個數字為該點，後面接一個用左右括號括起來的數字 n，表示連接到 n 個點，後面 n 個數字為連接到的點，中間都以空格隔開。
+Output： 輸出 Bridge 的數量及 Bridge。Bridge 要求輸出時是小的點連接到大的點 ( 如 (1, 5) 需輸出為 &quot;1 - 5&quot;，不可輸出為 &quot;5 - 1&quot; )，並且先依照前面的數字小到大排序，若前面一樣則依照後面的數字小到大排序 ( 即為 pair 的比 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/UVa-315/" title="UVa - 315 解題紀錄">UVa - 315 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-11-22T16:04:27.000Z" title="發表於 2020-11-23 00:04:27">2020-11-23</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UVa/">UVa</a></span></div><div class="content">題目： UVa - 315 - Network
+題目說明給一個所有點都有接通的無向圖，找出 Articulation Points ( 也叫 Cut Vertex、割點 ) 的數量。
+
+
+Articulation Points 的定義：
+
+
+對於根節點 root，若其有兩棵或兩棵以上的子樹 ( degree &gt;= 2 )，則該根節點 root 為割點。
+對於非葉子節點 u ( 非根節點 )，若其 child 存在一個節點 v 或 v 的 descendant 沒有指向 u 的 proper ancestor ( 不包含 u ) 的 Back edge，則節點 u 為割點。
+
+
+Input： 每組測資的第一行為一整數 N，表示有 N 個節點，若 N 為 0 代表結束，接下來最多 N 行為以空格隔開的數字，若為 0 則代表這筆測資結束，否則代表邊。如 5 1 2 3 4 表示有 ( 5, 1 )、( 5, 2 )、( 5, 3 )、( 5, 4 ) 這些邊。
+Output： 輸出 Articulation Points 的數量。
+解題思路先讀取測資並建圖 ( 因為是無向圖，所以建雙向 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/1091LA-HW2/" title="Homework 2 - Image Rotation">Homework 2 - Image Rotation</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-11-20T13:04:27.000Z" title="發表於 2020-11-20 21:04:27">2020-11-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1091LinearAlgebra-YzuCse/">1091LinearAlgebra-YzuCse</a></span></div><div class="content">課程名稱：線性代數 CS233 B授課教師：簡廷因發放時間：2020-11-02截止時間：2020-11-30 23:59:59
+
+題目說明給一張圖片 ( jpg )，偵測出圖片中最長的直線，逆時針旋轉直到直線垂直於水平線，並將旋轉後多出來的部份塗黑，之後輸出成圖片檔 ( jpg )。
+本次作業可使用 OpenCV 套件
+參數設定：
+Canny 使用 500，100HoughLinesP 使用 1, CV_PI / 180, 250, 200, 10
+OpenCV 設定在Visual Studio 2019上使用OpenCV : 先依照這篇設定，之後會遇到錯誤類似於 LNK1104 無法開啟檔案 &#39;opencv_world401d.lib&#39;[圖文] OpenCV 4.0.1 安裝配置在 Visual Studio 2019 : 之後再依照這篇設定環境參數即可。
+解題思路先使用 imread() 讀取圖片，之後使用 Canny() 完成邊緣偵測，再使用 HoughLinesP() 完成霍夫直線判斷，得到圖片中所有直線的陣列，之後遍歷陣列取得最長邊的斜率 ( 長度可使用 n ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/1091DS-HW7/" title="Homework 7 - UVa (DFS, Topological Sort)">Homework 7 - UVa (DFS, Topological Sort)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-11-18T16:04:27.000Z" title="發表於 2020-11-19 00:04:27">2020-11-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1091DataStructures-YzuCse/">1091DataStructures-YzuCse</a></span></div><div class="content">課程名稱：資料結構 CS203 A授課教師：林基成發放時間：2020-11-05截止時間：2020-11-12
+
+題目說明這次的作業是 UVa 中的 6 題題目。三題與 DFS 相關，三題與 Topological Sort 相關。
+與 DFS 相關
+
+UVa - 168 - Theseus and the Minotaur：UVa - 168 解題紀錄
+UVa - 11906 - Knight in a War Grid：UVa - 11906 解題紀錄
+UVa - 12442 - Forwarding Emails：UVa - 12442 解題紀錄
+
+與 Topological Sort 相關
+
+UVa - 200 - Rare Order：UVa - 200 解題紀錄
+UVa - 872 - Ordering：UVa - 872 解題紀錄
+UVa - 10305 - Ordering Tasks：UVa - 10305 解題紀錄
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/UVa-10305/" title="UVa - 10305 解題紀錄">UVa - 10305 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-11-18T15:04:27.000Z" title="發表於 2020-11-18 23:04:27">2020-11-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UVa/">UVa</a></span></div><div class="content">題目： UVa - 10305 - Ordering Tasks
+題目說明給一整數 N 代表有 N 個任務要完成，及 M 個規則，表示在做某個任務前需要完成的任務。求適合的執行任務順序 ( 符合規則即可 )。
+
+
+Input： 每組測資第一行為兩個整數 N、M，若 N、M 皆為 0 表示結束。否則接下來 M 行，每行都有兩個整數 a、b，表示在做任務 b 前需要先完成任務 a。
+Output： 符合規則的任務執行順序。
+解題思路基本的 Topological sort，建圖之後做 DFS 即可。
+參考解法123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657#include &lt;iostream&gt;#include &lt;functional&gt;#include &lt;vector&gt;#include &lt;list&gt;using namespace std;#define LOOP(n) for(int  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/UVa-872/" title="UVa - 872 解題紀錄">UVa - 872 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-11-17T03:04:27.000Z" title="發表於 2020-11-17 11:04:27">2020-11-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UVa/">UVa</a></span></div><div class="content">題目： UVa - 872 - Ordering
+題目說明給一些字母，及一些規則，如 A &lt; B，表示 B 一定要排在 A 後面。求符合規則所有排序情況，並依照字典序輸出。
+
+
+Input： 第一行為一整數，代表有幾組測資，每組測資的第一行為所有字母 ( 中間以空格隔開 )，第二行為排序規則 ( 一定是 &lt; 的形式，中間以空格隔開 )。每組測資中間以空行隔開，整數及第一筆測資間也以空行隔開。
+Output： 輸出所有排序情況並按照字典序排序。
+解題思路讀取所有字母並按照字典序排序 ( 確保後面做 DFS 時先輸出的會是字典序較小的 )，之後讀取規則，將 G[A][B] 設為 1 表示 A 指向 B，…，以此類推來建圖，之後 DFS 做 Topological Sort，同時搭配 Back Tracking 來排出所有情況即可。
+參考解法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/UVa-200/" title="UVa - 200 解題紀錄">UVa - 200 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-11-17T02:04:27.000Z" title="發表於 2020-11-17 10:04:27">2020-11-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UVa/">UVa</a></span></div><div class="content">題目： UVa - 200 - Rare Order
+題目說明給一些依據某種字典序排序的字串，求該字典序為何。
+
+
+Input： 測資裡面有好幾行字串，以 &quot;#&quot; 為終止，字串的順序為升冪排序。
+Output： 輸出測資以什麼字典序排序。
+解題思路讀取測資，每次取兩個字串來比較，將比字元 A 大的字元推入 G[0] 表示 A 指向該字元，…，以此類推來建圖，同時使用一個陣列紀錄字元的狀態，因為 DFS 時需要以沒有大於其他字元的為起點，之後使用 DFS 做 Topological sort 即可。
+參考解法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;functional&gt;#include &lt;vector ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/UVa-12442/" title="UVa - 12442 解題紀錄">UVa - 12442 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-11-15T11:04:27.000Z" title="發表於 2020-11-15 19:04:27">2020-11-15</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UVa/">UVa</a></span></div><div class="content">題目： UVa - 12442 - Forwarding Emails
+題目說明有一個小鎮，裡面的居民每個人都只會給另一個人寄信，求把信寄給哪位居民可以讓最多人看到這封信，若有相同者則取較小者。
+
+
+Input： 第一行為一整數 T，代表有 T 組測資，每組測資的第一行為一整數 N，接下來 N 行每行都有兩個整數 u、v，代表居民 u 會把信寄給居民 v。
+Output： 輸出寄信給誰可以讓最多的居民看到這封信，若有相同者則取較小者。
+解題思路DFS 模擬即可，由於會 TLE，所以進行一點剪枝，多使用一個陣列紀錄某位居民是否已經被模擬過了，若在前面被模擬過了則就不需要在模擬第一個寄信給這位居民了，因為前面模擬的是另一個居民會寄給這位居民，一定會比直接寄信給這位居民的人數還要多。例如：
+12345678若居民有 3 人，且寄信關係為：1 32 33 2則寄信給第一位居民時會再寄給第三位居民，那遍歷到第三位居民時就不需要在模擬一次了，因為由第一位寄給第三位，一定會比直接寄給第三位多。
+
+參考解法123456789101112131415161718192021222324252627282 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/UVa-11906/" title="UVa - 11906 解題紀錄">UVa - 11906 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-11-14T17:04:27.000Z" title="發表於 2020-11-15 01:04:27">2020-11-15</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UVa/">UVa</a></span></div><div class="content">題目： UVa - 11906 - Knight in a War Grid
+題目說明有一個騎士在一個 R x C 的棋盤上移動，從 (0, 0) 開始，每次可以從該點移動到 (±M, ±N) 及 (±N, ±M) 的點，有些點有水則不能跳。如果一個點能從偶數個點跳過來則標記為 偶，如果能從奇數個點跳過來則標記為 奇。求整個棋盤上 奇 跟 偶 的個數。
+
+
+Input： 第一行為一整數 T，代表有 T 組測資，每組測資的第一行為 4 個整數 R、C、M、N，接下來一行為一個整數 W，代表有 W 個有水的點，接下來 W 行，每行有兩個整數，代表有水的點的座標 **(x, y)**。
+Output： 輸出每組測資的 偶、奇 個數。
+解題思路使用 DFS 模擬，紀錄每個點被走到的次數，最後再計算 奇、偶 的個數即可，需要注意的是若 M、N 皆大於 0 且不相同，每次會有 8 個點可以走，若 M、N 相同或是兩者中有一個為 0 則每次只會有 4 個點可以走。還有若是 (0, 0) 除了一開始走到之外都沒有被走到的話會被歸類在 even 裡面。
+參考解法123456789101112131415 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/UVa-168/" title="UVa - 168 解題紀錄">UVa - 168 解題紀錄</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-11-14T10:04:27.000Z" title="發表於 2020-11-14 18:04:27">2020-11-14</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UVa/">UVa</a></span></div><div class="content">題目： UVa - 168 - Theseus and the Minotaur
+題目說明有一個迷宮，一個勇者跟一個怪物，怪物會怕光，所以勇者拿著蠟燭在追逐怪物，勇者每走一定的步數後會插上蠟燭，並繼續走，所以怪物一定會被逼到無路可走，求勇者有插上蠟燭的地方及最後怪物被抓到的地方。在每個地點怪物都會優先往字典序小的地方走。
+
+
+Input： 一組測資為一行字串，前面為每個地點能繼續往下走的地點 ( 單向 )，後面為兩個字元及一個數字，分別代表怪物一開始的位置及勇者一開始的位置及勇者每走幾步會插上蠟燭。勇者一開始一定會在怪物的附近一個點。
+Output： 勇者插上蠟燭的地方及怪物最後被抓到的地方。
+解題思路讀取資料後先建立圖，遍歷字串，若碰到 &#39;:&#39; 代表前面一個字元為某個地點，後面接的是某個地點能繼續往下走的地點，直到遇到 &#39;;&#39; 或 &#39;.&#39; 為止。定義 candle 紀錄插上蠟燭的位置，steps 為勇者走的步數，M 為怪物當前的位置，T 為勇者當前的位置，之後 DFS 求解即可，先判斷是否插上蠟燭，接著找怪物能繼續往下走的位置，若有可以 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/11/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/13/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Larry Lai</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">305</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">65</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分類</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/larrylai19"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-bolt"></i><span>最新評論</span></div><div class="aside-list"><span>正在載入中...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分類</span>
+            <a class="card-more-btn" href="/categories/" title="檢視更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1091DataStructures-YzuCse/"><span class="card-category-list-name">1091DataStructures-YzuCse</span><span class="card-category-list-count">13</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1091LinearAlgebra-YzuCse/"><span class="card-category-list-name">1091LinearAlgebra-YzuCse</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1092IntroductionToAlgorithms-YzuCse/"><span class="card-category-list-name">1092IntroductionToAlgorithms-YzuCse</span><span class="card-category-list-count">12</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Bitwise/"><span class="card-category-list-name">Bitwise</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LeetCode/"><span class="card-category-list-name">LeetCode</span><span class="card-category-list-count">151</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/UVa/"><span class="card-category-list-name">UVa</span><span class="card-category-list-count">105</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>標籤</span></div><div class="card-tag-cloud"><a href="/tags/0-1-Knapsack/" style="font-size: 1.15em; color: #999b9e">0-1 Knapsack</a> <a href="/tags/Articulation-Points/" style="font-size: 1.1em; color: #999">Articulation Points</a> <a href="/tags/BFS/" style="font-size: 1.15em; color: #999b9e">BFS</a> <a href="/tags/Back-Tracking/" style="font-size: 1.1em; color: #999">Back Tracking</a> <a href="/tags/Bellman-Ford/" style="font-size: 1.15em; color: #999b9e">Bellman Ford</a> <a href="/tags/Bitwise/" style="font-size: 1.2em; color: #999da3">Bitwise</a> <a href="/tags/C/" style="font-size: 1.5em; color: #99a9bf">C++</a> <a href="/tags/CPE-2020-06-09/" style="font-size: 1.13em; color: #999a9b">CPE - 2020/06/09</a> <a href="/tags/CPE-2020-10-20/" style="font-size: 1.23em; color: #999ea5">CPE - 2020/10/20</a> <a href="/tags/CPE-2020-12-22/" style="font-size: 1.23em; color: #999ea5">CPE - 2020/12/22</a> <a href="/tags/Coin-Change/" style="font-size: 1.15em; color: #999b9e">Coin Change</a> <a href="/tags/Computational-Geometry/" style="font-size: 1.15em; color: #999b9e">Computational Geometry</a> <a href="/tags/Convex-Hull/" style="font-size: 1.15em; color: #999b9e">Convex Hull</a> <a href="/tags/DFS/" style="font-size: 1.1em; color: #999">DFS</a> <a href="/tags/Dijkstra/" style="font-size: 1.15em; color: #999b9e">Dijkstra</a> <a href="/tags/Dinic/" style="font-size: 1.23em; color: #999ea5">Dinic</a> <a href="/tags/Divide-and-Conquer/" style="font-size: 1.13em; color: #999a9b">Divide and Conquer</a> <a href="/tags/Dynamic-Programming/" style="font-size: 1.4em; color: #99a5b6">Dynamic Programming</a> <a href="/tags/Edmonds-Karp/" style="font-size: 1.2em; color: #999da3">Edmonds-Karp</a> <a href="/tags/Floyd-Cycle-Detection-Algorithm/" style="font-size: 1.13em; color: #999a9b">Floyd Cycle Detection Algorithm</a> <a href="/tags/Floyd-Warshall/" style="font-size: 1.18em; color: #999ca0">Floyd-Warshall</a> <a href="/tags/Graham-Scan/" style="font-size: 1.15em; color: #999b9e">Graham Scan</a> <a href="/tags/Graph/" style="font-size: 1.32em; color: #99a2ae">Graph</a> <a href="/tags/Index-Sort/" style="font-size: 1.1em; color: #999">Index Sort</a> <a href="/tags/Kadane/" style="font-size: 1.15em; color: #999b9e">Kadane</a> <a href="/tags/Kruskcal/" style="font-size: 1.15em; color: #999b9e">Kruskcal</a> <a href="/tags/LDS/" style="font-size: 1.15em; color: #999b9e">LDS</a> <a href="/tags/LIS/" style="font-size: 1.18em; color: #999ca0">LIS</a> <a href="/tags/LeetCode/" style="font-size: 1.48em; color: #99a8bd">LeetCode</a> <a href="/tags/LeetCode-Easy/" style="font-size: 1.43em; color: #99a6b8">LeetCode - Easy</a> <a href="/tags/LeetCode-Hard/" style="font-size: 1.28em; color: #99a0aa">LeetCode - Hard</a> <a href="/tags/LeetCode-Medium/" style="font-size: 1.45em; color: #99a7ba">LeetCode - Medium</a> <a href="/tags/LeetCode-30-August/" style="font-size: 1.38em; color: #99a4b3">LeetCode 30 August</a> <a href="/tags/LeetCode-30-September/" style="font-size: 1.35em; color: #99a3b1">LeetCode 30 September</a> <a href="/tags/List/" style="font-size: 1.3em; color: #99a1ac">List</a> <a href="/tags/MCMF/" style="font-size: 1.15em; color: #999b9e">MCMF</a> <a href="/tags/Map/" style="font-size: 1.23em; color: #999ea5">Map</a> <a href="/tags/Maximum-Flow/" style="font-size: 1.25em; color: #999fa7">Maximum Flow</a> <a href="/tags/Minimum-Spanning-Tree/" style="font-size: 1.15em; color: #999b9e">Minimum Spanning Tree</a> <a href="/tags/Multiset/" style="font-size: 1.13em; color: #999a9b">Multiset</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>文章</span><a class="card-more-btn" href="/archives/" title="檢視更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">十二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">16</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>網站資訊</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章數目 :</div><div class="item-count">305</div></div><div class="webinfo-item"><div class="item-name">已運行時間 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-07-01T05:51:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站總字數 :</div><div class="item-count">105.3k</div></div><div class="webinfo-item"><div class="item-name">最後更新時間 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-05-18T10:03:54.558Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Larry Lai</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜尋</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[圖片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[連結]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代碼]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const findTrueUrl = (array) => {
+    let url = ''
+    Promise.all(array.map(item =>
+      fetch(item.url).then(resp => resp.json()).then(data => {
+        if (data.user.login === 'utterances-bot') {
+          url = data.body.match(/https?\:\/\/[^\" ]+/ig).slice(-1)
+          return url[0]
+        } else {
+          url = data.body.match(/https?\:\/\/[^\" ]+/i)
+          return url[0]
+        }
+      })
+    )).then(res => {
+        array = array.map((i,index)=> {
+          return {
+            ...i,
+            url: res[index]
+          }
+        })
+
+        saveToLocal.set('github-newest-comments', JSON.stringify(array), 10/(60*24))
+        generateHtml(array)
+    });
+  }
+
+  const getComment = () => {
+    fetch('https://api.github.com/repos/larrylai19/BlogComments/issues/comments?sort=updated&direction=desc&per_page=6&page=1',{
+      "headers": {
+        Accept: 'application/vnd.github.v3.html+json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        const githubArray = data.map(item => {
+          return {
+            'avatar': item.user.avatar_url,
+            'content': changeContent(item.body_html),
+            'nick': item.user.login,
+            'url': item.issue_url,
+            'date': item.updated_at,
+            'githubUrl': item.html_url
+          }
+        })
+        findTrueUrl(githubArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "無法獲取評論，請確認相關配置是否正確"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          //- result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+          result += `<a href='${array[i].url}#post-comment' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        //- 直接到文章評論處
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}#post-comment'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+        
+        //- result += `<div class='content'>
+        //- <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+        //- <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        //- </div></div>`
+      }
+    } else {
+      result += '沒有評論'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('github-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>
