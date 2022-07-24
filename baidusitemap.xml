@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.larrysprognotes.com/YOLOv7_2/</loc>
+    <lastmod>2022-07-24</lastmod>
+  </url>
+  <url>
     <loc>http://www.larrysprognotes.com/YOLOv7_1/</loc>
-    <lastmod>2022-07-23</lastmod>
+    <lastmod>2022-07-24</lastmod>
   </url>
   <url>
     <loc>http://www.larrysprognotes.com/Sofrware-Architecture/</loc>
@@ -33,19 +37,19 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/DeleteTomorrow/</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
     <loc>http://www.larrysprognotes.com/AreYouHappy/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/DoYouRemember/</loc>
+    <loc>http://www.larrysprognotes.com/DeleteTomorrow/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
     <loc>http://www.larrysprognotes.com/Pain/</loc>
+    <lastmod>2022-05-16</lastmod>
+  </url>
+  <url>
+    <loc>http://www.larrysprognotes.com/DoYouRemember/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -105,15 +109,15 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-514/</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
     <loc>http://www.larrysprognotes.com/UVa-558/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
     <loc>http://www.larrysprognotes.com/UVa-615/</loc>
+    <lastmod>2022-05-16</lastmod>
+  </url>
+  <url>
+    <loc>http://www.larrysprognotes.com/UVa-514/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -233,6 +237,10 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
+    <loc>http://www.larrysprognotes.com/UVa-11572/</loc>
+    <lastmod>2022-05-16</lastmod>
+  </url>
+  <url>
     <loc>http://www.larrysprognotes.com/UVa-11631/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
@@ -245,19 +253,15 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-11572/</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
     <loc>http://www.larrysprognotes.com/UVa-11504/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-11517/</loc>
+    <loc>http://www.larrysprognotes.com/UVa-11506/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-11506/</loc>
+    <loc>http://www.larrysprognotes.com/UVa-11517/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -293,19 +297,19 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-11286/</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
     <loc>http://www.larrysprognotes.com/UVa-11228/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-11380/</loc>
+    <loc>http://www.larrysprognotes.com/UVa-11286/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
     <loc>http://www.larrysprognotes.com/UVa-11378/</loc>
+    <lastmod>2022-05-16</lastmod>
+  </url>
+  <url>
+    <loc>http://www.larrysprognotes.com/UVa-11380/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -345,11 +349,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-10954/</loc>
+    <loc>http://www.larrysprognotes.com/UVa-10972/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-10972/</loc>
+    <loc>http://www.larrysprognotes.com/UVa-10954/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -377,11 +381,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-1062/</loc>
+    <loc>http://www.larrysprognotes.com/UVa-10616/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-10616/</loc>
+    <loc>http://www.larrysprognotes.com/UVa-1062/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -429,6 +433,10 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
+    <loc>http://www.larrysprognotes.com/UVa-10305/</loc>
+    <lastmod>2022-05-16</lastmod>
+  </url>
+  <url>
     <loc>http://www.larrysprognotes.com/UVa-10306/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
@@ -437,15 +445,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-10305/</loc>
+    <loc>http://www.larrysprognotes.com/UVa-10172/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
     <loc>http://www.larrysprognotes.com/UVa-10171/</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
-    <loc>http://www.larrysprognotes.com/UVa-10172/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -473,11 +477,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-10050/</loc>
+    <loc>http://www.larrysprognotes.com/UVa-10082/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/UVa-10082/</loc>
+    <loc>http://www.larrysprognotes.com/UVa-10050/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -509,11 +513,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-986/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-983/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-983/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-986/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -529,11 +533,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-835/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-763/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-763/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-835/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -553,11 +557,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-64/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-677/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-677/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-64/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -697,15 +701,15 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
+    <loc>http://www.larrysprognotes.com/LeetCode-19/</loc>
+    <lastmod>2022-05-16</lastmod>
+  </url>
+  <url>
     <loc>http://www.larrysprognotes.com/LeetCode-2/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
     <loc>http://www.larrysprognotes.com/LeetCode-200/</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-19/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -833,15 +837,7 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-23/</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
     <loc>http://www.larrysprognotes.com/LeetCode-25/</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-41/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -849,7 +845,15 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
+    <loc>http://www.larrysprognotes.com/LeetCode-41/</loc>
+    <lastmod>2022-05-16</lastmod>
+  </url>
+  <url>
     <loc>http://www.larrysprognotes.com/LeetCode-57/</loc>
+    <lastmod>2022-05-16</lastmod>
+  </url>
+  <url>
+    <loc>http://www.larrysprognotes.com/LeetCode-23/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -885,11 +889,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-905/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-9/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-9/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-905/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -973,11 +977,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-35/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-342/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-342/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-35/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -985,11 +989,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-387/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-383/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-383/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-387/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -1053,11 +1057,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-136/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-14/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/LeetCode-14/</loc>
+    <loc>http://www.larrysprognotes.com/LeetCode-136/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -1101,11 +1105,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/C++_Vector_Introduce/</loc>
+    <loc>http://www.larrysprognotes.com/1092ALGO-HW9/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/1092ALGO-HW9/</loc>
+    <loc>http://www.larrysprognotes.com/C++_Vector_Introduce/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -1161,11 +1165,11 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/1091LA-HW1/</loc>
+    <loc>http://www.larrysprognotes.com/1091LA-HW0/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
-    <loc>http://www.larrysprognotes.com/1091LA-HW0/</loc>
+    <loc>http://www.larrysprognotes.com/1091LA-HW1/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -1189,15 +1193,15 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
+    <loc>http://www.larrysprognotes.com/1091DS-HW7/</loc>
+    <lastmod>2022-05-16</lastmod>
+  </url>
+  <url>
     <loc>http://www.larrysprognotes.com/1091DS-HW8/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
     <loc>http://www.larrysprognotes.com/1091DS-HW9/</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
-    <loc>http://www.larrysprognotes.com/1091DS-HW7/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
@@ -1209,15 +1213,15 @@
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
+    <loc>http://www.larrysprognotes.com/1091DS-HW11/</loc>
+    <lastmod>2022-05-16</lastmod>
+  </url>
+  <url>
     <loc>http://www.larrysprognotes.com/1091DS-HW2/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
     <loc>http://www.larrysprognotes.com/1091DS-HW3/</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
-    <loc>http://www.larrysprognotes.com/1091DS-HW11/</loc>
     <lastmod>2022-05-16</lastmod>
   </url>
   <url>
