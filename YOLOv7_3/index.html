@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YOLOv7 on Windows (三) AI 自瞄實現原理與危害 | Larry's notes</title><meta name="keywords" content="Python,AI,YOLOv7,Deep Learning,Anaconda,FPS"><meta name="author" content="Larry Lai"><meta name="copyright" content="Larry Lai"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="隨著硬體計算能力和演算法的進步，AI 自瞄漸漸浮現出來，我第一次聽到這個詞是在去年，正好前幾天看到 YOLOv7 推出的消息，就很好奇像我這種沒有自己訓練過模型，對於深度學習也沒什麼概念的人，多久時間能做出來。雖然製作過程中踩了不少坑，成果還是很令我滿意的。 外掛原理在繼續今天的主題前，先解釋一下大部分遊戲外掛運作的原理 程式在執行時都會被載入到記憶體中，遊戲也不例外，當遊戲執行時，遊戲中出現的各">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YOLOv7 on Windows (三) AI 自瞄實現原理與危害">
+<meta property="og:url" content="http://www.larrysprognotes.com/YOLOv7_3/index.html">
+<meta property="og:site_name" content="Larry&#39;s notes">
+<meta property="og:description" content="隨著硬體計算能力和演算法的進步，AI 自瞄漸漸浮現出來，我第一次聽到這個詞是在去年，正好前幾天看到 YOLOv7 推出的消息，就很好奇像我這種沒有自己訓練過模型，對於深度學習也沒什麼概念的人，多久時間能做出來。雖然製作過程中踩了不少坑，成果還是很令我滿意的。 外掛原理在繼續今天的主題前，先解釋一下大部分遊戲外掛運作的原理 程式在執行時都會被載入到記憶體中，遊戲也不例外，當遊戲執行時，遊戲中出現的各">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2022-07-25T10:04:27.000Z">
+<meta property="article:modified_time" content="2022-09-18T06:49:49.340Z">
+<meta property="article:author" content="Larry Lai">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="YOLOv7">
+<meta property="article:tag" content="Deep Learning">
+<meta property="article:tag" content="Anaconda">
+<meta property="article:tag" content="FPS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/L-favicon-32x32.ico"><link rel="canonical" href="http://www.larrysprognotes.com/YOLOv7_3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-38280830-2"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-38280830-2');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-18 14:49:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5254341279416601" crossorigin="anonymous"></script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">318</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">81</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分類</div><div class="length-num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Larry's notes</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">YOLOv7 on Windows (三) AI 自瞄實現原理與危害</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2022-07-25T10:04:27.000Z" title="發表於 2022-07-25 18:04:27">2022-07-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2022-09-18T06:49:49.340Z" title="更新於 2022-09-18 14:49:49">2022-09-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/YOLOv7/">YOLOv7</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>5分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">評論數:</span><a href="/YOLOv7_3/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div><article class="post-content" id="article-container"><p>隨著硬體計算能力和演算法的進步，AI 自瞄漸漸浮現出來，我第一次聽到這個詞是在去年，正好前幾天看到 YOLOv7 推出的消息，就很好奇像我這種沒有自己訓練過模型，對於深度學習也沒什麼概念的人，多久時間能做出來。雖然製作過程中踩了不少坑，成果還是很令我滿意的。</p>
+<h3 id="外掛原理"><a href="#外掛原理" class="headerlink" title="外掛原理"></a>外掛原理</h3><p>在繼續今天的主題前，先解釋一下大部分遊戲外掛運作的原理</p>
+<p>程式在執行時都會被載入到記憶體中，遊戲也不例外，當遊戲執行時，遊戲中出現的各種數據都以二進制的方式儲存在記憶體中，包含程式碼也是<br>因此，讀取記憶體並修改內容是大部分遊戲外掛的原理，通常會有幾個 base address，將其值加上不同的偏移量便可得到各種數據，當然，程式每次被載入時在記憶體中的位置是不固定的，但目前都是採用虛擬記憶體的技術，使得 base address 是固定的，如果遊戲沒有更新的話，基本上找到的 base address 都不會變</p>
+<p>手法上來說，一般會挑選一些較固定可控的數據，透過其 address 往上找 base address，大部分 address 都是 base address 的值經過好幾次偏移得到的，這非常考驗能力和經驗，對於組合語言也要有一定的認識，逆向工程本就不是容易的事</p>
+<p>找到 base address 及各種數據的偏移後，能做的事情就非常多了，可以直接讀寫數據，更進階的話，觀察遊戲內的一些觸發事件，找到處理事件的組合語言，利用工具修改就可以達到許多不可思議的功能</p>
+<p>舉例來說，敵對子彈打到角色上會觸發事件，在該事件使人物扣血，那就可以利用血量的 address，找到哪裡改變了這個 address 的值，進而找到該部分的組合語言，又如前述，程式碼也是在記憶體中的，修改組合語言後程式碼在記憶體內的值也會修改，因此在遊戲執行時直接修改該位置的值即可達成修改組合語言的目的，比方說可以讓子彈打到角色身上不扣血等等，基本上大部分想的到的功能都可依此想法實做出來</p>
+<p>而基於這種方式實現的自瞄比較單純，只要取得敵人位置，計算相對位置後模擬滑鼠訊號移動射擊即可</p>
+<h3 id="AI-自瞄"><a href="#AI-自瞄" class="headerlink" title="AI 自瞄"></a>AI 自瞄</h3><p>AI 自瞄的原理基本上和傳統自瞄原理是相同的，只是原本透過讀取記憶體取得敵人位置的步驟改成辨識圖片來定位敵人<br>雖然看起來只取代了一個步驟，但其實省去很多麻煩，就算先不考慮後續過偵測的問題，光是要找 address 就要花很大的力氣，並且通常隨遊戲更新，address 也會改變，更別說讀寫記憶體是很容易被偵測出來的，遊戲常常會崩潰，帳號很容易被鎖<br>而 AI 自瞄就很好的避免掉這些困難，而且訓練好的模型也不太需要更新</p>
+<p>接下來先看一下基於 YOLOv7 實現的自瞄效果如何</p>
+<h3 id="基於-YOLOv7-自瞄-Demo"><a href="#基於-YOLOv7-自瞄-Demo" class="headerlink" title="基於 YOLOv7 自瞄 Demo"></a>基於 YOLOv7 自瞄 Demo</h3><div class="note flat danger flat"><p>是在離線模式下 Demo 的，分數並不會上排行榜<br>這系列文章僅供學習研究之用，用於其他用途，任何後果請自行承擔</p>
+</div>
+
+<div class="video-container"><iframe src="https://www.youtube.com/embed/WW09virndjs" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+
+<p>以我看到的數據，高手差不多 7 ~ 10 萬，職業選手差不多 11 ~ 13 萬左右，也有特意練習的人能打出更高的分數，可以看出效果是非常好的<br>並且受限於我的硬體性能和保持影片觀看性，我加了一些延遲，相信如果優化一下還能取得更高的分數</p>
+<h3 id="製作過程"><a href="#製作過程" class="headerlink" title="製作過程"></a>製作過程</h3><p>上面展示的成果，研究加實作的時間不到兩天，只使用 50 張圖片做訓練，相較於傳統逆向開發的外掛，利用 AI 完成自瞄難度是非常低的，我會將實現的方式分為幾個步驟</p>
+<ul>
+<li><p><strong>製作模型</strong><br>  基本上製作模型是沒有任何難度的，花一些時間了解參數的意義及影響，標註好圖片，就可以直接產出模型了，並且訓練好後除非遊戲新增人物或多了一些影響判斷的東西，否則是不需要更改的</p>
+<p>  甚至若沒有要求的話，用官方提供的模型就可以辨識出人物了，而一些場景較單純的遊戲，只需要極少的資料就可以有不錯的預測效果，像我這次選擇的遊戲，在標註好 10 張圖片時我有先訓練測試，效果其實和目前 50 張圖片訓練出來的相差無幾</p>
+</li>
+<li><p><strong>引入模型並預測</strong><br>  製作好模型後，就可以在程式中載入自己的模型，遊戲過程中利用螢幕截圖的方式將圖片送進模型預測，就可以取得畫面上敵人的位置了</p>
+</li>
+<li><p><strong>移動滑鼠射擊</strong><br>  這步驟也是最困難的，雖然已經取得了敵人的位置，但在 FPS 遊戲中是不支持絕對移動的，只能使用相對移動<br>  使用相對移動的話要考慮的事情就非常多了，圖片和遊戲解析度、遊戲滑鼠靈敏度、系統靈敏度等等<br>  這也在我這次開發過程中佔用最多時間，需要不斷嘗試，微調移動參數才能達到好的效果</p>
+</li>
+</ul>
+<h3 id="對於-FPS-遊戲的危害"><a href="#對於-FPS-遊戲的危害" class="headerlink" title="對於 FPS 遊戲的危害"></a>對於 FPS 遊戲的危害</h3><p>如前述，傳統遊戲外掛大部分都要讀取記憶體，而目前也有許多不錯的應對方法，但基於物件偵測的自瞄不需要對遊戲本身動任何手腳，這就使得要用非人工的方法反制變得非常困難，如果加入一些不穩定因素，人工辨別也會有一點難度。更極端一點，將遊戲畫面擷取下來，在其他主機做計算，並透過物理方式移動滑鼠，要偵測外掛的難度又更高，連透過特徵碼判斷的方式也會失效。並且根據我的經驗，逆向開發的外掛花費的時間得是好幾倍以上，更別說模型訓練好後在一些遊戲是可以共用的</p>
+<p>AI 自瞄的缺點應該就是標註圖片比較花時間及性能要求較高，除此之外優點很大程度上大過缺點，對於 FPS 遊戲的危害絕對是非常大的</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Larry Lai</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="http://www.larrysprognotes.com/YOLOv7_3/">http://www.larrysprognotes.com/YOLOv7_3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="http://www.larrysprognotes.com" target="_blank">Larry's notes</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/AI/">AI</a><a class="post-meta__tags" href="/tags/YOLOv7/">YOLOv7</a><a class="post-meta__tags" href="/tags/Deep-Learning/">Deep Learning</a><a class="post-meta__tags" href="/tags/Anaconda/">Anaconda</a><a class="post-meta__tags" href="/tags/FPS/">FPS</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/YOLOv7_2/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">YOLOv7 on Windows (二) 訓練自己的資料集</div></div></a></div><div class="next-post pull-right"><a href="/PUPC2022/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">PUPC 2022 心得</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Larry Lai</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">318</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">81</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分類</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/larrylai19"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E6%8E%9B%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">外掛原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AI-%E8%87%AA%E7%9E%84"><span class="toc-number">2.</span> <span class="toc-text">AI 自瞄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%96%BC-YOLOv7-%E8%87%AA%E7%9E%84-Demo"><span class="toc-number">3.</span> <span class="toc-text">基於 YOLOv7 自瞄 Demo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%BD%E4%BD%9C%E9%81%8E%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">製作過程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8D%E6%96%BC-FPS-%E9%81%8A%E6%88%B2%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="toc-number">5.</span> <span class="toc-text">對於 FPS 遊戲的危害</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Lightsplit/" title="Lightsplit 最少轉帳次數研究實作">Lightsplit 最少轉帳次數研究實作</a><time datetime="2023-02-08T18:04:27.000Z" title="發表於 2023-02-09 02:04:27">2023-02-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Data-Mining-with-Kaggle-YouTube-Videos-and-Channels-Metadata/" title="Data Mining with Kaggle YouTube Videos and Channels Metadata">Data Mining with Kaggle YouTube Videos and Channels Metadata</a><time datetime="2023-01-10T03:04:27.000Z" title="發表於 2023-01-10 11:04:27">2023-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/LeetCode-60/" title="LeetCode - 60 解題紀錄">LeetCode - 60 解題紀錄</a><time datetime="2022-11-22T08:04:27.000Z" title="發表於 2022-11-22 16:04:27">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/LeetCode-52/" title="LeetCode - 52 解題紀錄">LeetCode - 52 解題紀錄</a><time datetime="2022-11-22T07:04:27.000Z" title="發表於 2022-11-22 15:04:27">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/LeetCode-51/" title="LeetCode - 51 解題紀錄">LeetCode - 51 解題紀錄</a><time datetime="2022-11-22T06:04:27.000Z" title="發表於 2022-11-22 14:04:27">2022-11-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Larry Lai</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直達評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜尋</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: '2d3b013ac297d7f9e5ef',
+      clientSecret: 'bceac9b2c9e57762dc957197c9979a336c7b0221',
+      repo: 'BlogComments',
+      owner: 'larrylai19',
+      admin: ['larrylai19'],
+      id: '21f2e04e8523e8ffe60cc1557ac421e3',
+      language: 'zh-TW',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'first',
+      createIssueManually: false,
+      updateCountCallback: commentCount,
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

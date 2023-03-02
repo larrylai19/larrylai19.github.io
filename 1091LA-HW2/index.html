@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Homework 2 - Image Rotation | Larry's notes</title><meta name="keywords" content="C++"><meta name="author" content="Larry Lai"><meta name="copyright" content="Larry Lai"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="課程名稱：線性代數 CS233 B授課教師：簡廷因">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Homework 2 - Image Rotation">
+<meta property="og:url" content="http://www.larrysprognotes.com/1091LA-HW2/index.html">
+<meta property="og:site_name" content="Larry&#39;s notes">
+<meta property="og:description" content="課程名稱：線性代數 CS233 B授課教師：簡廷因">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-11-20T13:04:27.000Z">
+<meta property="article:modified_time" content="2022-05-16T07:37:36.188Z">
+<meta property="article:author" content="Larry Lai">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/L-favicon-32x32.ico"><link rel="canonical" href="http://www.larrysprognotes.com/1091LA-HW2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-38280830-2"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-38280830-2');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-16 15:37:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5254341279416601" crossorigin="anonymous"></script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">318</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">81</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分類</div><div class="length-num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Larry's notes</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Homework 2 - Image Rotation</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2020-11-20T13:04:27.000Z" title="發表於 2020-11-20 21:04:27">2020-11-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2022-05-16T07:37:36.188Z" title="更新於 2022-05-16 15:37:36">2022-05-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/1091LinearAlgebra-YzuCse/">1091LinearAlgebra-YzuCse</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>4分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">評論數:</span><a href="/1091LA-HW2/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div><article class="post-content" id="article-container"><p>課程名稱：線性代數 CS233 B<br>授課教師：簡廷因<span id="more"></span><br>發放時間：2020-11-02<br>截止時間：2020-11-30 23:59:59</p>
+<hr>
+<h3 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h3><p>給一張圖片 ( jpg )，偵測出圖片中最長的直線，逆時針旋轉直到直線垂直於水平線，並將旋轉後多出來的部份塗黑，之後輸出成圖片檔 ( jpg )。</p>
+<p><strong><code>本次作業可使用 OpenCV 套件</code></strong></p>
+<p><strong>參數設定：</strong></p>
+<p>Canny 使用 <code>500，100</code><br>HoughLinesP 使用 <code>1, CV_PI / 180, 250, 200, 10</code></p>
+<h3 id="OpenCV-設定"><a href="#OpenCV-設定" class="headerlink" title="OpenCV 設定"></a>OpenCV 設定</h3><p><a target="_blank" rel="noopener" href="https://ppt.cc/fdePvx">在Visual Studio 2019上使用OpenCV</a> : 先依照這篇設定，之後會遇到錯誤類似於 <code>LNK1104 無法開啟檔案 &#39;opencv_world401d.lib&#39;</code><br><a target="_blank" rel="noopener" href="https://ppt.cc/fda4tx">[圖文] OpenCV 4.0.1 安裝配置在 Visual Studio 2019</a> : 之後再依照這篇設定環境參數即可。</p>
+<h3 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h3><p>先使用 <code>imread()</code> 讀取圖片，之後使用 <code>Canny()</code> 完成邊緣偵測，再使用 <code>HoughLinesP()</code> 完成霍夫直線判斷，得到圖片中所有直線的陣列，之後遍歷陣列取得最長邊的斜率 ( 長度可使用 <code>norm()</code> 進行計算 )，並算出圖片需要旋轉的角度 ( 在 <code>getSlope()</code> 中 return 的地方，我也不知道為什麼要這樣弄，在網路上找的資料拼拼湊湊弄出來的 )，之後找出圖片的中心點 ( 長度寬度各除以二 )，並使用 <code>getRotationMatrix2D()</code> 找出旋轉矩陣，最後使用 <code>warpAffine()</code> 取得圖片旋轉後的結果並輸出檔案 ( 使用 <code>imwrite()</code> ) 即可。</p>
+<p><strong>請先看更新：<a href="#2020-12-01-00-39">點我</a></strong></p>
+<h3 id="參考解法"><a href="#參考解法" class="headerlink" title="參考解法"></a>參考解法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">OpenCV setup</span></span><br><span class="line"><span class="comment">https://ppt.cc/fdePvx : 先依照這篇設定，之後會遇到錯誤類似於 LNK1104 無法開啟檔案 &#x27;opencv_world401d.lib&#x27;</span></span><br><span class="line"><span class="comment">https://ppt.cc/fda4tx : 之後再依照這篇設定環境參數即可</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Reference:</span></span><br><span class="line"><span class="comment">    霍夫直線檢測: https://ppt.cc/fSXfIx</span></span><br><span class="line"><span class="comment">    計算斜率: https://www.itread01.com/content/1547635163.html</span></span><br><span class="line"><span class="comment">    旋轉圖片: https://www.itread01.com/articles/1476043874.html</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// get longest line&#x27;s slope</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getSlope</span><span class="params">(<span class="built_in">vector</span>&lt;Vec4i&gt;&amp; lines)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> _max = <span class="number">0</span>, tmp;</span><br><span class="line">    Vec4i V;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; l : lines)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp = norm(Point(l[<span class="number">2</span>], l[<span class="number">3</span>]) - Point(l[<span class="number">0</span>], l[<span class="number">1</span>]));</span><br><span class="line">        <span class="keyword">if</span> (tmp &gt; _max) _max = tmp, V = l;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">atan</span>((<span class="keyword">double</span>)(V[<span class="number">3</span>] - V[<span class="number">1</span>]) / (<span class="keyword">double</span>)(V[<span class="number">2</span>] - V[<span class="number">0</span>])) * <span class="number">180</span> / CV_PI + <span class="number">90</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">3</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// read image</span></span><br><span class="line">    Mat Image = imread(argv[<span class="number">1</span>], <span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (Image.empty()) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// get Canny matrix</span></span><br><span class="line">    Mat canny;</span><br><span class="line">    Canny(Image, canny, <span class="number">500</span>, <span class="number">100</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// get hough lines</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;Vec4i&gt; Lines;</span><br><span class="line">    HoughLinesP(canny, Lines, <span class="number">1</span>, CV_PI / <span class="number">180</span>, <span class="number">250</span>, <span class="number">200</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> slope = getSlope(Lines);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// get center and rotation matrix</span></span><br><span class="line">    Size sz = Image.size();</span><br><span class="line">    <span class="function">Point2f <span class="title">center</span><span class="params">(sz.width / <span class="number">2.</span>, sz.height / <span class="number">2.</span>)</span></span>;</span><br><span class="line">    Mat rotMat = getRotationMatrix2D(center, slope, <span class="number">1.0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// rotate</span></span><br><span class="line">    Mat result;</span><br><span class="line">    warpAffine(Image, result, rotMat, sz);</span><br><span class="line"></span><br><span class="line">    imwrite(argv[<span class="number">2</span>], result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a target="_blank" rel="noopener" href="https://ppt.cc/fSXfIx">Opencv霍夫直线检测</a><br><a target="_blank" rel="noopener" href="https://www.itread01.com/content/1547635163.html">opencv計算直線的斜率、截距，與水平線弧度值、角度值</a><br><a target="_blank" rel="noopener" href="https://www.itread01.com/articles/1476043874.html">用OpenCV實現Photoshop算法(一): 圖像旋轉</a></p>
+<hr>
+<h3 id="2020-12-01-00-39"><a href="#2020-12-01-00-39" class="headerlink" title="2020/12/01 00:39"></a>2020/12/01 00:39</h3><p>老師系統好像出問題，抓錯資料導致測資錯誤，後來系統弄好後只剩 10 分，然後多了一些需要處理的情況。</p>
+<p>還有原本是 <strong>逆時針旋轉</strong>，後來改成 <strong>朝最接近垂直線的角度旋轉</strong>。</p>
+<ol>
+<li><p><strong>修改旋轉角度：</strong> 原本是逆時針旋轉所以 <code>slope</code> 直接加 90，後來加上判斷，若順時針旋轉的角度較小則順時針旋轉，減 90。修改這邊後是 50 分。</p>
+</li>
+<li><p><strong>彩色圖片：</strong> 原本的測資好像都是黑白的圖片，所以那時候沒有加上轉灰階，新測資的 6 ~ 10 是彩色的圖片，需要轉灰階才能成功偵測。</p>
+</li>
+</ol>
+<p>修改後的 Code：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/imgproc/types_c.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Reference:</span></span><br><span class="line"><span class="comment">	霍夫直線檢測: https://ppt.cc/fSXfIx</span></span><br><span class="line"><span class="comment">	計算斜率: https://www.itread01.com/content/1547635163.html</span></span><br><span class="line"><span class="comment">	旋轉圖片: https://www.itread01.com/articles/1476043874.html</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// get longest line&#x27;s slope</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getSlope</span><span class="params">(<span class="built_in">vector</span>&lt;Vec4i&gt;&amp; lines)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> _max = <span class="number">0</span>, tmp;</span><br><span class="line">	Vec4i V;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span>&amp; l : lines)</span><br><span class="line">	&#123;</span><br><span class="line">		tmp = norm(Point(l[<span class="number">2</span>], l[<span class="number">3</span>]) - Point(l[<span class="number">0</span>], l[<span class="number">1</span>]));</span><br><span class="line">		<span class="keyword">if</span> (tmp &gt; _max) _max = tmp, V = l;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">atan</span>((<span class="keyword">double</span>)(V[<span class="number">3</span>] - V[<span class="number">1</span>]) / (<span class="keyword">double</span>)(V[<span class="number">2</span>] - V[<span class="number">0</span>])) * <span class="number">180</span> / CV_PI;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (argc &lt; <span class="number">3</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// read image</span></span><br><span class="line">	Mat Image = imread(argv[<span class="number">1</span>], <span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">if</span> (Image.empty()) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 轉成灰階，彩色圖片沒有這一步會錯誤</span></span><br><span class="line">	Mat gray;</span><br><span class="line">	cvtColor(Image, gray, CV_BGR2GRAY);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// get canny matrix</span></span><br><span class="line">	Mat canny;</span><br><span class="line">	Canny(gray, canny, <span class="number">500</span>, <span class="number">100</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// get hough lines</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;Vec4i&gt; Lines;</span><br><span class="line">	HoughLinesP(canny, Lines, <span class="number">1</span>, CV_PI / <span class="number">180</span>, <span class="number">250</span>, <span class="number">200</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">double</span> slope = getSlope(Lines);</span><br><span class="line">	slope += (slope &gt; <span class="number">0</span>) ? <span class="number">-90</span> : <span class="number">90</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// get center and rotation matrix</span></span><br><span class="line">	Size sz = Image.size();</span><br><span class="line">	<span class="function">Point2f <span class="title">center</span><span class="params">(sz.width / <span class="number">2.</span>, sz.height / <span class="number">2.</span>)</span></span>;</span><br><span class="line">	Mat rotMat = getRotationMatrix2D(center, slope, <span class="number">1.0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// rotate</span></span><br><span class="line">	Mat result;</span><br><span class="line">	warpAffine(Image, result, rotMat, sz);</span><br><span class="line"></span><br><span class="line">	imwrite(argv[<span class="number">2</span>], result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/larrylai19/1091YzuCse/blob/master/LinearAlgebra/HW2/"><i class="fa fa-download fa-2x"></i></a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Larry Lai</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="http://www.larrysprognotes.com/1091LA-HW2/">http://www.larrysprognotes.com/1091LA-HW2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="http://www.larrysprognotes.com" target="_blank">Larry's notes</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/1091DS-HW7/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Homework 7 - UVa (DFS, Topological Sort)</div></div></a></div><div class="next-post pull-right"><a href="/UVa-315/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">UVa - 315 解題紀錄</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Larry Lai</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">318</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">81</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分類</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/larrylai19"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%8C%E7%9B%AE%E8%AA%AA%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">題目說明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenCV-%E8%A8%AD%E5%AE%9A"><span class="toc-number">2.</span> <span class="toc-text">OpenCV 設定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A1%8C%E6%80%9D%E8%B7%AF"><span class="toc-number">3.</span> <span class="toc-text">解題思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%83%E8%80%83%E8%A7%A3%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">參考解法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="toc-number">5.</span> <span class="toc-text">參考資料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-12-01-00-39"><span class="toc-number">6.</span> <span class="toc-text">2020&#x2F;12&#x2F;01 00:39</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Lightsplit/" title="Lightsplit 最少轉帳次數研究實作">Lightsplit 最少轉帳次數研究實作</a><time datetime="2023-02-08T18:04:27.000Z" title="發表於 2023-02-09 02:04:27">2023-02-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Data-Mining-with-Kaggle-YouTube-Videos-and-Channels-Metadata/" title="Data Mining with Kaggle YouTube Videos and Channels Metadata">Data Mining with Kaggle YouTube Videos and Channels Metadata</a><time datetime="2023-01-10T03:04:27.000Z" title="發表於 2023-01-10 11:04:27">2023-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/LeetCode-60/" title="LeetCode - 60 解題紀錄">LeetCode - 60 解題紀錄</a><time datetime="2022-11-22T08:04:27.000Z" title="發表於 2022-11-22 16:04:27">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/LeetCode-52/" title="LeetCode - 52 解題紀錄">LeetCode - 52 解題紀錄</a><time datetime="2022-11-22T07:04:27.000Z" title="發表於 2022-11-22 15:04:27">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/LeetCode-51/" title="LeetCode - 51 解題紀錄">LeetCode - 51 解題紀錄</a><time datetime="2022-11-22T06:04:27.000Z" title="發表於 2022-11-22 14:04:27">2022-11-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Larry Lai</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直達評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜尋</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: '2d3b013ac297d7f9e5ef',
+      clientSecret: 'bceac9b2c9e57762dc957197c9979a336c7b0221',
+      repo: 'BlogComments',
+      owner: 'larrylai19',
+      admin: ['larrylai19'],
+      id: '63be3949f821d242b5924a02a1c1434a',
+      language: 'zh-TW',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'first',
+      createIssueManually: false,
+      updateCountCallback: commentCount,
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
