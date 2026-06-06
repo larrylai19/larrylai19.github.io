@@ -2623,7 +2623,7 @@ blockquote footer cite:before {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-width: 0;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 .top-announcement__title {
@@ -2671,7 +2671,7 @@ blockquote footer cite:before {
     padding: 0.5rem 0.65rem;
   }
   .top-announcement__body {
-    font-size: 0.82rem;
+    font-size: 0.92rem;
   }
   .top-announcement__title {
     display: block;
