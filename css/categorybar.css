@@ -108,6 +108,105 @@
   line-height: 1;
 }
 
+.article-tag-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  width: 100%;
+}
+
+.article-tag-badges--home {
+  margin: 0.55rem 0 0.15rem;
+}
+
+.article-tag-badges--sort {
+  margin-top: 0.45rem;
+}
+
+#archive .article-sort-item,
+#category .article-sort-item,
+#tag .article-sort-item {
+  align-items: flex-start;
+}
+
+#archive .article-sort-item.no-article-cover,
+#category .article-sort-item.no-article-cover,
+#tag .article-sort-item.no-article-cover {
+  height: auto;
+  min-height: 80px;
+}
+
+#archive .article-sort-item-info,
+#category .article-sort-item-info,
+#tag .article-sort-item-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0.1rem 0 0.9rem;
+}
+
+#archive .article-sort-item-img + .article-sort-item-info,
+#category .article-sort-item-img + .article-sort-item-info,
+#tag .article-sort-item-img + .article-sort-item-info {
+  padding-right: 0;
+  padding-left: 0.8rem;
+}
+
+#archive .article-sort-item-title,
+#category .article-sort-item-title,
+#tag .article-sort-item-title {
+  order: 1;
+}
+
+#archive .article-sort-item-time,
+#category .article-sort-item-time,
+#tag .article-sort-item-time {
+  order: 2;
+  margin-top: 0.18rem;
+}
+
+#archive .article-tag-badges,
+#category .article-tag-badges,
+#tag .article-tag-badges {
+  order: 3;
+}
+
+.article-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  gap: 5px;
+  padding: 4px 9px;
+  border: 1px solid rgba(73, 177, 245, 0.24);
+  border-radius: 8px;
+  background: rgba(248, 250, 252, 0.9);
+  color: #2878ad !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  box-shadow: 0 5px 14px rgba(31, 35, 40, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.article-tag-badge i {
+  flex: 0 0 auto;
+  font-size: 0.74em;
+  line-height: 1;
+}
+
+.article-tag-badge span {
+  min-width: 0;
+}
+
+.article-tag-badge:hover {
+  border-color: rgba(73, 177, 245, 0.5);
+  color: #1d6f9f !important;
+  text-decoration: none !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(31, 35, 40, 0.1);
+}
+
 @media screen and (max-width: 650px) {
   .categoryBar-card-wrap {
     padding: 46px 12px 12px !important;
